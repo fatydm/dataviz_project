@@ -47,9 +47,9 @@ async function afficherChansons(genre, pays, cleApi) {
         chansons.forEach((chanson) => {
             const divRecipes = document.createElement("div");
             divRecipes.innerHTML = `
-        <h4>$${chanson.titre} (ID: ${chanson.idVideo})</h4>
+        <h4>${chanson.titre} (ID: ${chanson.idVideo})</h4>
         <h2>Chaîne: ${chanson.chaine}</h2>
-        <img src=Miniature: ${chanson.miniature}>
+         <img src="${chanson.miniature}" alt="Miniature de la vidéo">
          `;
             document.body.appendChild(divRecipes);
         });
