@@ -1,11 +1,12 @@
-console.log("coucou");
+import {scene} from './visualmap.js';
+
+// scene()
 
 
-async function recettes() {
-    const url = 'http://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast';
-    const reponse = await fetch(url);
-    const data = await reponse.json();
-    console.log(data);
+async function obtenerRecetasPorArea(area) {
+    const url = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`;
+    const respuesta = await fetch(url);
+    const data = await respuesta.json();
 
     for (let i = 0; i < data.meals.length; i++) {
 
@@ -19,21 +20,22 @@ async function recettes() {
         document.body.appendChild(divRecipes);
     }
 }
-recettes();
+
+obtenerRecetasPorArea("Mexican");
+obtenerRecetasPorArea("Italian");
 
 
 
 async function rechercherChansons(genre, pays, cleApi) {
-    const requete = await fetch(
-        `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${genre} music ${pays}&type=video&key=${cleApi}&maxResults=10`
-    );
+    const requete = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${genre} music ${pays}&type=video&key=${cleApi}&maxResults=5`);
     const reponse = await requete.json();
+
     if (reponse.items) {
         return reponse.items.map((item) => ({
-            titre: item.snippet.title,
-            idVideo: item.id.videoId,
+            // map va a buscar cada letra en los objetos para ver si corresponde
+            titre: item.snippet.title.slice(0, 20),
             miniature: item.snippet.thumbnails.default.url,
-            chaine: item.snippet.channelTitle,
+            link: `https://www.youtube.com/watch?v=$${item.id.videoId}`, 
         }));
     } else {
         return [];
@@ -43,13 +45,12 @@ async function rechercherChansons(genre, pays, cleApi) {
 async function afficherChansons(genre, pays, cleApi) {
     const chansons = await rechercherChansons(genre, pays, cleApi);
     if (chansons.length > 0) {
-        console.log(`Chansons ${genre} en ${pays} :`);
         chansons.forEach((chanson) => {
             const divRecipes = document.createElement("div");
             divRecipes.innerHTML = `
-        <h4>${chanson.titre} (ID: ${chanson.idVideo})</h4>
-        <h2>Chaîne: ${chanson.chaine}</h2>
-         <img src="${chanson.miniature}" alt="Miniature de la vidéo">
+        <h4>${chanson.titre}</h4>
+        <a href="${chanson.url}" target="_blank">Voir la vidéo</a>
+        <img src="${chanson.miniature}" alt="Miniature de la vidéo">
          `;
             document.body.appendChild(divRecipes);
         });
