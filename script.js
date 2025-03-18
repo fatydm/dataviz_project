@@ -1,6 +1,15 @@
 import {scene} from './visualmap.js';
 
-// scene()
+
+
+
+
+
+
+
+
+
+
 
 
 async function obtenerRecetasPorArea(area) {
