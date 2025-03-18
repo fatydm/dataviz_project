@@ -4,6 +4,14 @@ canvas {
     left: 0;
 }
 
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #cecece;
+    background: #222;
+    margin: 0;
+    padding: 0;
+}
+
 
 /* STYLE CSS DE L'INDEX */
 
@@ -26,6 +34,7 @@ p{
     margin-left: 30px;
 }
 
+
 .navbar {
     display: flex;
     justify-content: flex-end;
@@ -43,11 +52,6 @@ a:focus {
     background-color: #fff;
 }
 
-html,
-body {
-    margin: 0;
-    padding: 0;
-}
 
 nav {
     display: flex;
@@ -70,11 +74,33 @@ a:not(:last-child) {
     margin-right: 12px;
 }
 
+/* transition lettres  */
+.item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10,
+.item-11, .item-12, .item-13, .item-14, .item-15, .item-16, .item-17, .item-18, .item-19, .item-20,
+.item-21, .item-22 {
+    position: absolute;
+    display: block;
+    top: 2em;
+    width: 60%;
+    font-size: 2em;
+    animation-duration: 100s;
+    animation-timing-function:  linear;
+    animation-iteration-count: infinite;
+    opacity: 0; /* Cacher les éléments au début */
+}
+
+
 .para_click{
     text-align: center;
     cursor: pointer;
     font-size: 0.9rem;
     text-decoration: underline;
+}
+
+footer{
+    margin-top: auto;
+    
+
 }
 
 /* STYLE CSS DE LA PAGE ABOUT */
