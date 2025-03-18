@@ -1,6 +1,4 @@
 // import {scene} from './visualmap.js';
-
-
 const itemCount = 22;
 const batchSize = 6;
 let currentBatchStart = 1;
@@ -8,57 +6,42 @@ let currentBatchStart = 1;
 function animateBatch(start, end) {
     for (let i = start; i <= end; i++) {
         const item = document.querySelector(`.item-${i}`);
-
         const keyframes = `@keyframes anim-${i} {
-            0%, 15% { left: ${Math.random() * -100}%; top: ${Math.random() * 100}%; opacity: 0; }
-            15%, 35% { left: ${Math.random() * 100}%; top: ${Math.random() * 100}%; opacity: 1; }
-            35%, 50% { left: ${Math.random() * 100}%; top: ${Math.random() * 100}%; opacity: 1; }
-            50%, 65% { left: ${Math.random() * 100}%; top: ${Math.random() * 100}%; opacity: 1; }
-            65%, 85% { left: ${Math.random() * 100}%; top: ${Math.random() * 100}%; opacity: 1; }
-            85%, 100% { left: ${Math.random() * 100 + 100}%; top: ${Math.random() * 100}%; opacity: 0; }
+            0%, 15% { left: ${Math.random() * -50}%; bottom: ${Math.random() * 30}%; opacity: 0; }
+            15%, 35% { left: ${Math.random() * 50}%; bottom: ${Math.random() * 30}%; opacity: 1; }
+            35%, 50% { left: ${Math.random() * 50}%; bottom: ${Math.random() * 30}%; opacity: 1; }
+            50%, 65% { left: ${Math.random() * 50}%; bottom: ${Math.random() * 30}%; opacity: 1; }
+            65%, 85% { left: ${Math.random() * 50}%; bottom: ${Math.random() * 30}%; opacity: 1; }
+            85%, 100% { left: ${Math.random() * 50 + 50}%; bottom: ${Math.random() * 30}%; opacity: 0; }
         }`;
-
         const styleSheet = document.createElement("style");
         styleSheet.innerText = keyframes;
-        document.head.appendChild(styleSheet);
-
+        tongue_transitions.appendChild(styleSheet);
         item.style.animationName = `anim-${i}`;
         item.style.opacity = 1; // Afficher l'élément
     }
 }
-
 function fadeOutBatch(start, end) {
     for (let i = start; i <= end; i++) {
         const item = document.querySelector(`.item-${i}`);
         item.style.opacity = 0; // Faire disparaître l'élément
     }
 }
-
 function animateNextBatch() {
     const batchEnd = Math.min(currentBatchStart + batchSize - 1, itemCount);
-
     if (currentBatchStart > 1) {
         // Faire disparaître le lot précédent
         const prevBatchStart = currentBatchStart - batchSize;
         const prevBatchEnd = batchEnd - batchSize;
         fadeOutBatch(prevBatchStart, prevBatchEnd);
     }
-
     animateBatch(currentBatchStart, batchEnd);
     currentBatchStart = batchEnd + 1;
-
     if (currentBatchStart <= itemCount) {
         setTimeout(animateNextBatch, 10000);
     }
 }
-
 animateNextBatch();
-
-
-
-
-
-
 
 
 

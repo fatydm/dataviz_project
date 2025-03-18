@@ -26,6 +26,7 @@ body {
 .container {
     margin: 10px;
     flex: 1;
+    position: relative;
 }
 
 h1 {
@@ -83,34 +84,81 @@ a:not(:last-child) {
 }
 
 /* transition lettres  */
-.item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10,
-.item-11, .item-12, .item-13, .item-14, .item-15, .item-16, .item-17, .item-18, .item-19, .item-20,
-.item-21, .item-22 {
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5,
+.item-6,
+.item-7,
+.item-8,
+.item-9,
+.item-10,
+.item-11,
+.item-12,
+.item-13,
+.item-14,
+.item-15,
+.item-16,
+.item-17,
+.item-18,
+.item-19,
+.item-20,
+.item-21,
+.item-22 {
     position: absolute;
     display: block;
     top: 2em;
+    left: 2px;
     width: 60%;
     font-size: 2em;
     animation-duration: 100s;
-    animation-timing-function:  linear;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
-    opacity: 0; /* Cacher les éléments au début */
+    opacity: 0;
+    /* Cacher les éléments au début */
 }
 
 
+#div_transitions {
+    height: 100%;
+
+
+}
+
 /* transition lettres  */
-.item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10,
-.item-11, .item-12, .item-13, .item-14, .item-15, .item-16, .item-17, .item-18, .item-19, .item-20,
-.item-21, .item-22 {
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5,
+.item-6,
+.item-7,
+.item-8,
+.item-9,
+.item-10,
+.item-11,
+.item-12,
+.item-13,
+.item-14,
+.item-15,
+.item-16,
+.item-17,
+.item-18,
+.item-19,
+.item-20,
+.item-21,
+.item-22 {
     position: absolute;
+    /* Positionne l'élément par rapport au conteneur */
     display: block;
-    top: 2em;
     width: 60%;
     font-size: 2em;
-    animation-duration: 100s;
-    animation-timing-function:  linear;
+    animation-duration: 20s;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
-    opacity: 0; /* Cacher les éléments au début */
+    opacity: 0;
+    /* Cacher les éléments au début */
 }
 
 
@@ -121,7 +169,7 @@ a:not(:last-child) {
     text-decoration: underline;
 }
 
-footer{
+footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -132,14 +180,14 @@ footer{
     padding: 20px;
 }
 
-.footer_link{
+.footer_link {
     border: none;
 
 }
 
-footer{
+footer {
     margin-top: auto;
-    
+
 
 }
 
