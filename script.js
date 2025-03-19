@@ -1,36 +1,33 @@
 // import {scene} from './visualmap.js';
 
-const itemCount = 22;
-const batchSize = 4;
-let currentBatchStart = 1;
 
-function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
+function getRandomLinearGradient() {
+    const r = Math.floor(Math.random(20) * 80);
+    const g = Math.floor(Math.random(100) * 190);
+    const b = Math.floor(Math.random(80) * 120);
+
+    return `rgb(${r}, ${g}, ${b})`;
 }
 
+// function applyGradientToText(element) {
+//     const gradient = getRandomLinearGradient();
+//     element.style.background = gradient;
+//     element.style.webkitBackgroundClip = "text"; // Pour les navigateurs Webkit (Chrome, Safari)
+//     element.style.backgroundClip = "text"; // Standard
+//     element.style.color = "transparent"; // Rend le texte transparent pour voir le gradient
+// }
 
 function animateBatch(start, end) {
     for (let i = start; i <= end; i++) {
         const item = document.querySelector(`.item-${i}`);
-
-        const randomColor = getRandomColor();
-
-        //     0%, 15% { left: ${Math.random() * 100}%; bottom: ${Math.random() * 20}%; opacity: 0; }
-        //     15%, 30% {left: ${Math.random() * 100}%; top: ${Math.random() * 50}%; opacity: 0.5; }
-        //     30%, 50% { left: ${Math.random() * 100}%; bottom: ${Math.random() * 50}%; opacity: 1; }
-        //     50%, 70% { left: ${Math.random() * 100}%;top: ${Math.random() * 50}%; opacity: 0.5; }
-        //     70%, 85% { left: ${Math.random() * 100}%; bottom: ${Math.random() * 50}%; opacity: 1; }
-        //     90%, 100% { left: ${Math.random() * 100 + 100}%; bottom: ${Math.random() * 50}%; opacity: 0; }
-        // }`;
+    
+        
+       item.style.color = getRandomLinearGradient();
+        
 
         const keyframes = `@keyframes anim-${i} {
             0%, 15% {
-                left: ${Math.random() * -50}%; 
+                left: ${Math.random() * 50}%; 
                 bottom: ${Math.random() * 20}%; 
                 opacity: 0;
             }
@@ -46,13 +43,13 @@ function animateBatch(start, end) {
             }
             50%, 70% {
                 left: ${Math.random() * 80}%; 
-                top: ${Math.random() * 50}%; 
+                top: ${Math.random() * 100}%; 
                 opacity: 0.5;
             }
             70%, 85% {
                 left: ${Math.random() * 20}%; 
                 bottom: ${Math.random() * 50}%; 
-                opacity: 1;
+                opacity: 0;
             }
             90%, 100% {
                 left: ${Math.random() * 120 + 80}%; 
@@ -66,36 +63,38 @@ function animateBatch(start, end) {
         styleSheet.innerText = keyframes;
 
         const tongueTransition = document.getElementById('tongue_transitions')
-        tongueTransition.appendChild(item)
         tongueTransition.appendChild(styleSheet);
 
         item.style.animationName = `anim-${i}`;
-        item.style.opacity = 1;
+        
     }
 }
 
-function fadeOutBatch(start, end) {
-    for (let i = start; i <= end; i++) {
+function resetAnimation() {
+    for (let i = 1; i <= 22; i++) {
         const item = document.querySelector(`.item-${i}`);
-    item.style.opacity = 0; // Faire disparaître l'élément
+        item.style.animationName = ""; // ca fait que ca s'enleve l'item d'avant
     }
 }
+
+let currentBatchStart = 1;
 
 function animateNextBatch() {
-    const batchEnd = Math.min(currentBatchStart + batchSize - 1, itemCount);
-    if (currentBatchStart > 1) {
-
-        // Faire disparaître le lot précédent
-        const prevBatchStart = currentBatchStart - batchSize;
-        const prevBatchEnd = batchEnd - batchSize;
-        fadeOutBatch(prevBatchStart, prevBatchEnd);
+    resetAnimation();
+    const itemCount = 22;
+    const batchSize = 4;
+    if (currentBatchStart >= itemCount) {
+        currentBatchStart = 1;
     }
+    const batchEnd = Math.min(currentBatchStart + batchSize - 1, itemCount);
+    console.log(batchEnd)
     animateBatch(currentBatchStart, batchEnd);
     currentBatchStart = batchEnd + 1;
-    if (currentBatchStart <= itemCount) {
-        setTimeout(animateNextBatch, 20000);
-    }
+    
+    setTimeout(animateNextBatch, 10000);
 }
+
+
 animateNextBatch();
 
 
