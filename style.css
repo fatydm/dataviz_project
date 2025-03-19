@@ -143,14 +143,10 @@ p {
     left: 10px;
     width: 100%;
     font-size: 2em;
-    animation-duration: 40s;
+    animation-duration: 10s;
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
     opacity: 0;
-}
-
-.item-1{
-    color: blue;
 }
 
 
