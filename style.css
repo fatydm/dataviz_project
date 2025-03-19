@@ -10,7 +10,6 @@ canvas {
     box-sizing: border-box;
 }
 
-
 html,
 body {
     margin: 0;
@@ -20,6 +19,51 @@ body {
     flex-direction: column;
 }
 
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+
+}
+
+.header {
+    background-color: #333;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+    background-color: #333;
+    width: auto;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    width: 100px;
+    border-radius: 18px;
+    padding: 8px 12px;
+    font: bold 12px Verdana;
+}
+
+a:hover,
+a:focus {
+    color: #333;
+    background-color: #fff;
+}
+
+
+a:not(:last-child) {
+    margin-right: 12px;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    background-color: #333;
+}
 
 /* STYLE CSS DE L'INDEX */
 
@@ -38,93 +82,24 @@ p {
     font-size: 1.2rem;
 }
 
-
-.logo {
-    height: 200px;
-    margin-left: 30px;
+.parentsTransitions {
+    /* border: 2px solid red; */
+    width: 100%;
+    height: 50%;
+    position: inherit;
+    overflow: hidden;
 }
 
-
-.navbar {
-    display: flex;
-    justify-content: flex-end;
-}
-
-a {
-    color: #fff;
-    background-color: #333;
-    transition: all 1s ease-out;
-}
-
-a:hover,
-a:focus {
-    color: #333;
-    background-color: #fff;
-}
-
-nav {
-    display: flex;
-    padding: 12px;
-    background-color: #333;
-}
-
-a {
-    width: 100px;
-    border: 1px solid #fff;
-    border-radius: 18px;
-    outline: 0;
-    padding: 8px 12px;
-    text-align: center;
-    text-decoration: none;
-    font: bold 12px Verdana;
-}
-
-a:not(:last-child) {
-    margin-right: 12px;
-}
-
-/* transition lettres  */
-.item-1,
-.item-2,
-.item-3,
-.item-4,
-.item-5,
-.item-6,
-.item-7,
-.item-8,
-.item-9,
-.item-10,
-.item-11,
-.item-12,
-.item-13,
-.item-14,
-.item-15,
-.item-16,
-.item-17,
-.item-18,
-.item-19,
-.item-20,
-.item-21,
-.item-22 {
-    position: absolute;
-    display: block;
-    top: 2em;
-    left: 2px;
-    width: 60%;
-    font-size: 2em;
-    animation-duration: 100s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    opacity: 0;
-    /* Cacher les éléments au début */
-}
-
-
-#div_transitions {
+#tongue_transitions {
+    width: 100%;
     height: 100%;
-
-
+    position: absolute;
+    /* Permet de se déplacer dans le parent */
+    animation: moveAround 5s infinite linear;
 }
+
+
+
 
 /* transition lettres  */
 .item-1,
@@ -150,23 +125,28 @@ a:not(:last-child) {
 .item-21,
 .item-22 {
     position: absolute;
-    /* Positionne l'élément par rapport au conteneur */
     display: block;
-    width: 60%;
+    top: 0;
+    left: 10px;
+    width: 100%;
     font-size: 2em;
-    animation-duration: 20s;
-    animation-timing-function: linear;
+    animation-duration: 40s;
+    animation-timing-function: ease-out;
     animation-iteration-count: infinite;
     opacity: 0;
-    /* Cacher les éléments au début */
+}
+
+.item-1{
+    color: blue;
 }
 
 
-.para_click {
+.para_click{
     text-align: center;
     cursor: pointer;
     font-size: 0.9rem;
     text-decoration: underline;
+    color: black;
 }
 
 footer {
@@ -182,13 +162,6 @@ footer {
 
 .footer_link {
     border: none;
-
-}
-
-footer {
-    margin-top: auto;
-
-
 }
 
 /* STYLE CSS DE LA PAGE ABOUT */
