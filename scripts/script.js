@@ -2,93 +2,86 @@
 
 
 function getRandomLinearGradient() {
-    const r = Math.floor(Math.random(20) * 80);
-    const g = Math.floor(Math.random(100) * 190);
-    const b = Math.floor(Math.random(80) * 120);
+    const r = Math.floor(Math.random(200) * 265);
+    const g = Math.floor(Math.random(100) * 200);
+    const b = Math.floor(Math.random(0) * 100);
 
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-function animateBatch(start, end) {
-    for (let i = start; i <= end; i++) {
-        const item = document.querySelector(`.item-${i}`);
+
+function displaySentence() {
+    const divSentences = document.getElementById('tongue_transitions');
+
+    const sentences = [
+        "",
+        "What are we eating tonight?",
+        "我们今晚吃什么",
+        "Što jedemo večeras?",
+        "Wat eten we vanavond?",
+        "هناكل ايه النهاردة بالليل؟",
+        "Anong kakainin natin ngayong gabi?",
+        "Qu'est-ce qu'on mange ce soir?",
+        "Τι τρώμε απόψε?",
+        "आज रात हम क्या खा रहे हैं?",
+        "Cad a bheas muid ag ithe anocht?",
+        "Cosa mangiamo stasera?",
+        "Weh wi a eat tonight?",
+        "今夜は何を食べますか？",
+        "Tutakula nini usiku wa leo?",
+        "Apa kita makan malam ini?",
+        "¿Qué vamos a cenar esta noche?",
+        "Co jemy dziś wieczorem?",
+        "O que vamos comer hoje à noite?",
+        "Что мы едим сегодня вечером?",
+        "คืนนี้เรากินอะไรกัน?",
+        "Bu akşam ne yiyoruz?",
+        "Що ми їмо сьогодні ввечері?"
+    ];
+ 
+
+    for (let i = 0; i < sentences.length; i++) {
+
+        const divEachP = document.createElement("div");
+        divEachP.classList.add('sentence-wrapper');
     
+        const paraSentence = document.createElement("p");
+        paraSentence.classList.add('items', "ml2");
         
-       item.style.color = getRandomLinearGradient();
+        const spanElement = document.createElement("span");
+        spanElement.classList.add('sentence', );
+        spanElement.innerText = sentences[i]; 
+        spanElement.style.color = getRandomLinearGradient();
         
-
-        const keyframes = `@keyframes anim-${i} {
-            0%, 15% {
-                left: ${Math.random() * 50}%; 
-                bottom: ${Math.random() * 20}%; 
-                opacity: 0;
-            }
-            15%, 30% {
-                left: ${Math.random() * 100}%; 
-                top: ${Math.random() * 50}%; 
-                opacity: 0.5;
-            }
-            30%, 50% {
-                left: ${Math.random() * 100}%; 
-                bottom: ${Math.random() * 50}%; 
-                opacity: 1;
-            }
-            50%, 70% {
-                left: ${Math.random() * 80}%; 
-                top: ${Math.random() * 100}%; 
-                opacity: 0.5;
-            }
-            70%, 85% {
-                left: ${Math.random() * 20}%; 
-                bottom: ${Math.random() * 50}%; 
-                opacity: 0;
-            }
-            90%, 100% {
-                left: ${Math.random() * 120 + 80}%; 
-                bottom: ${Math.random() * 50}%; 
-                opacity: 0;
-            }
-        }`;
-
-        const styleSheet = document.createElement("style");
-        styleSheet.innerText = keyframes;
-
-        const tongueTransition = document.getElementById('tongue_transitions')
-        tongueTransition.appendChild(styleSheet);
-
-        item.style.animationName = `anim-${i}`;
-        
-    }
-}
-
-function resetAnimation() {
-    for (let i = 1; i <= 22; i++) {
-        const item = document.querySelector(`.item-${i}`);
-        item.style.animationName = ""; // ca fait que ca s'enleve l'item d'avant
-    }
-}
-
-let currentBatchStart = 1;
-
-function animateNextBatch() {
-    resetAnimation();
-    const itemCount = 22;
-    const batchSize = 4;
-    if (currentBatchStart >= itemCount) {
-        currentBatchStart = 1;
-    }
-    const batchEnd = Math.min(currentBatchStart + batchSize - 1, itemCount);
-    console.log(batchEnd)
-    animateBatch(currentBatchStart, batchEnd);
-    currentBatchStart = batchEnd + 1;
+        paraSentence.appendChild(spanElement);
     
-    setTimeout(animateNextBatch, 10000);
+        divEachP.appendChild(paraSentence);
+    
+        divSentences.appendChild(divEachP);
+    }
+    animate()
 }
+displaySentence();
 
 
-animateNextBatch();
+function animate() {
+    const textWrappers = document.querySelectorAll('.sentence-wrapper'); 
 
+    textWrappers.forEach((wrapper, index) => {
+        const spanElements = wrapper.querySelectorAll('.sentence'); 
 
+        spanElements.forEach((span, i) => {
 
-
+            anime.timeline({ loop: true })
+                .add({
+                    targets: span,
+                    scale: [1, 1],
+                    opacity: [0, 1],
+                    easing: "easeOutExpo",
+                    duration: 2000,
+                    delay: (el, i) => 70 * i + (index * 1000)
+                });
+        });
+    });
+}
 

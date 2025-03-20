@@ -6,94 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dataviz</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
 </head>
 
 <body>
     <header class="header">
         <img class="logo" src="asset/newLogo.png" alt="logo du site">
         <nav>
-            <a href="index.html">Accueil</a>
+            <!-- <a href="index.html">Accueil</a> -->
             <a href="./html/about.html">À propos</a>
-            <a href="./html/contact.html">Contact</a>
         </nav>
     </header>
 
     <main class="container">
 
-        <h1>Bienvenue sur <strong><em>GLOBE FOODER</strong></em></h1>
+        <h1><strong><em>GL🍩BE F🥯🥘DER</strong></em></h1>
 
         <br>
             <br>
-
-            Ici, la cuisine devient un plaisir simple et accessible à tous. Découvrez des recettes savoureuses, faciles
-            à
+        <p class="explanation_site">
             <br>
-            réaliser et adaptées à toutes vos envies. Que vous soyez un chef en herbe ou un cuisinier expérimenté, il y
-            en a
+            Ici, la cuisine devient un plaisir simple et accessible à tous. <br><br> Découvrez des recettes savoureuses, faciles
+            à réaliser et adaptées à toutes vos envies. <br> <br> Que vous soyez un chef en herbe ou un cuisinier expérimenté, il y
+            en a pour tous les goûts !
             <br>
-            pour tous les goûts !
-
-            Explorez, cuisinez, dégustez… et surtout, régalez-vous !<br>
             <br>
-            Bon appétit !
         </p>
 
-        <a href="html/menus.html"><p class="para_click">Explore les saveurs</p></a>
         <div class="steps">
-            <div>
-                <p>1</p>
-                <p class="fonctionnement">Choisis ton pays</p>
+            <div class="steps_contain">
+                <p class="steps_contain_num">1</p>
+                <p class="steps_contain_text">Explorez</p>
              </div>
-            <div>
-                <p>2</p>
-                <p class="fonctionnement">Choisis ton plat</p>
+            <div class="steps_contain">
+                <p class="steps_contain_num">2</p>
+                <p class="steps_contain_text">Cuisinez</p>
             </div>
-            <div>
-                <p>3</p>
-                <p class="fonctionnement">Choisis ton ambiance</p>
+            <div class="steps_contain">
+                <p class="steps_contain_num">3</p>
+                <p class="steps_contain_text">Dégustez</p>
             </div>
         </div>
 
-        
+        <a href="html/menus.html"><p class="para_click">EXPLOREZ LES SAVEURS</p></a>
+
         <div class="parentsTransitions">
-            <div id="tongue_transitions">
-                <p class="item-1">What are we eating tonight?</p>
-                <p class="item-2"> 我们今晚吃什么？</p>
-                <p class="item-3"> Što jedemo večeras?</p>
-                <p class="item-4"> Wat eten we vanavond?</p>
-                <p class="item-5"> هناكل ايه النهاردة بالليل؟ </p>
-                <p class="item-6"> Anong kakainin natin ngayong gabi?</p>
-                <p class="item-7"> Qu'est-ce qu'on mange ce soir?</p>
-                <p class="item-8"> Τι τρώμε απόψε?</p>
-                <p class="item-9"> आज रात हम क्या खा रहे हैं?</p>
-                <p class="item-10"> Cad a bheas muid ag ithe anocht?</p>
-                <p class="item-11"> Cosa mangiamo stasera?</p>
-                <p class="item-12"> Weh wi a eat tonight?</p>
-                <p class="item-13"> 今夜は何を食べますか？ </p>
-                <p class="item-14"> Tutakula nini usiku wa leo?</p>
-                <p class="item-15"> Apa kita makan malam ini?</p>
-                <p class="item-16"> ¿Qué vamos a cenar esta noche?</p>
-                <p class="item-17"> Co jemy dziś wieczorem?</p>
-                <p class="item-18"> O que vamos comer hoje à noite?</p>
-                <p class="item-19"> Что мы едим сегодня вечером?</p>
-                <p class="item-20"> คืนนี้เรากินอะไรกัน? </p>
-                <p class="item-21"> Bu akşam ne yiyoruz?</p>
-                <p class="item-22"> Що ми їмо сьогодні ввечері?</p>
-            </div>
+            <div id="tongue_transitions"> </div>
         </div>
     </main>
-
-
-    <canvas id="bg"></canvas>
-
-
 
     <footer>
         <h3>Globe Fooder</h3>
         <div class="footer_text">
-            <a class="footer_link" href="index.html">Accueil</a>
-            <a class="footer_link" href="./html/about.html">À propos</a>
-            <a class="footer_link" href="./html/contact.html">Contact</a>
+            <a class="footer_link" href="#">Une recette à nous proposer</a>
+            <a class="footer_link" href="#">Mentions légales</a>
         </div>
     </footer>
     <script type="module" src="scripts/script.js"></script>
