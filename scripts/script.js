@@ -65,23 +65,36 @@ displaySentence();
 
 
 function animate() {
-    const textWrappers = document.querySelectorAll('.sentence-wrapper'); 
-
+    const textWrappers = document.querySelectorAll('.sentence-wrapper');
+  
     textWrappers.forEach((wrapper, index) => {
-        const spanElements = wrapper.querySelectorAll('.sentence'); 
-
-        spanElements.forEach((span, i) => {
-
-            anime.timeline({ loop: true })
-                .add({
-                    targets: span,
-                    scale: [1, 1],
-                    opacity: [0, 1],
-                    easing: "easeOutExpo",
-                    duration: 2000,
-                    delay: (el, i) => 70 * i + (index * 1000)
-                });
-        });
+      const spanElements = wrapper.querySelectorAll('.sentence');
+  
+      spanElements.forEach((span, i) => {
+        // Diviser le texte en lettres et les envelopper dans des spans
+        span.innerHTML = span.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        const letters = span.querySelectorAll('.letter');
+  
+        anime.timeline({ loop: true })
+          .add({
+            targets: letters,
+            scale: [4, 1],
+            opacity: [0, 1],
+            translateZ: 0,
+            easing: "easeOutExpo",
+            duration: 950,
+            delay: (el, i) => 70 * i + (index * 1000) // Ajout du délai pour chaque wrapper
+          })
+          .add({
+            targets: span, // Cibler le span entier pour la disparition
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1000
+          });
+      });
     });
-}
+  }
+  
+  animate(); // Lancer l'animation
 
