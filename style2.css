@@ -1,0 +1,43 @@
+body {
+    background: radial-gradient(circle, rgba(190,228,250,1) 0%, rgba(50,128,154,1) 100%);;
+    display: flex;
+    place-content: center center;
+    margin: 0; /* Supprime les marges par défaut du body */
+}
+
+
+
+
+
+
+.container-map path {
+    fill : #329a54;
+    stroke: black;/* linea */
+    stroke-width: 1,5px;
+}
+
+ .container-map :hover{ /*para cuando se mueva el pointer cambie de color */
+    fill : palegreen;
+    
+}
+
+
+.meal-title {
+    font-size: 18px; /* Taille de police de base */
+    color: blue;
+}
+
+.meal-image {
+    width: 80%;/* Définir la largeur de l'image */
+    max-width: 180px; /* Réduire la largeur maximale de l'image */
+    height: auto; /* Conserver le ratio d'aspect */
+    border-radius: 10px; /* Ajouter des coins arrondis */
+    display: block; /* Pour éviter les espaces inutiles autour de l'image */
+    margin: 10px auto; /* Centrer l'image horizontalement et ajouter une marge */
+}
+
+h2 {
+    color: red;
+}
+
+
