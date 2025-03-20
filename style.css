@@ -24,7 +24,6 @@ header {
     flex-direction: row;
     justify-content: space-between;
     gap: 20px;
-
 }
 
 .header {
@@ -73,6 +72,11 @@ a:not(:last-child) {
     position: relative;
 }
 
+#logoCouleur{
+    width: auto;
+    margin-right: 150px;
+}
+
 h1 {
     text-align: center;
     font-size: 3rem;
@@ -80,10 +84,22 @@ h1 {
 
 p {
     font-size: 1.2rem;
+    text-align: center;
+}
+
+.steps{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.fonctionnement{
+    border: 2px solid rgb(45, 70, 42);
+    padding: 0.5em 0.5em;
+    border-radius: 20px;
 }
 
 .parentsTransitions {
-    /* border: 2px solid red; */
     width: 100%;
     height: 50%;
     position: inherit;
@@ -97,9 +113,6 @@ p {
     /* Permet de se déplacer dans le parent */
     animation: moveAround 5s infinite linear;
 }
-
-
-
 
 /* transition lettres  */
 .item-1,

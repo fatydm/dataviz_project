@@ -50,7 +50,6 @@ function animateBatch(start, end) {
             }
         }`;
 
-
         const styleSheet = document.createElement("style");
         styleSheet.innerText = keyframes;
 
