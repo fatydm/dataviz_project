@@ -1,9 +1,4 @@
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
+/* Style page du site */
 * {
     margin: 0;
     padding: 0;
@@ -12,13 +7,14 @@ canvas {
 
 html,
 body {
-    margin: 0;
-    padding: 0;
+    /* margin: 0; */
+    /* padding: 0; */
     height: 100%;
     display: flex;
     flex-direction: column;
 }
 
+/* Style du header, navbar et du logo */
 header {
     display: flex;
     flex-direction: row;
@@ -27,14 +23,14 @@ header {
 }
 
 .header {
-    background-color: #333;
+    background-color: #d09f62;
 }
 
 nav {
     display: flex;
     justify-content: flex-end;
     padding: 12px;
-    background-color: #333;
+    background-color: #d09f62;
     width: auto;
 }
 
@@ -47,37 +43,25 @@ a {
     font: bold 12px Verdana;
 }
 
-a:hover,
 a:focus {
-    color: #333;
-    background-color: #fff;
-}
-
-
-a:not(:last-child) {
-    margin-right: 12px;
+    text-decoration: underline;
 }
 
 .logo {
     height: 60px;
     width: auto;
-    background-color: #333;
+    background-color: #d09f62;
 }
 
-/* STYLE CSS DE L'INDEX */
+/* Style du body */
 
 .container {
-    margin: 10px;
     flex: 1;
     position: relative;
 }
 
-#logoCouleur{
-    width: auto;
-    margin-right: 150px;
-}
-
 h1 {
+    margin-top: 30px;
     text-align: center;
     font-size: 3rem;
 }
@@ -85,36 +69,101 @@ h1 {
 p {
     font-size: 1.2rem;
     text-align: center;
+
 }
 
+.explanation_site{
+    background-color: #eadbca; 
+    margin-bottom: 0;
+}
+
+
+/* Style de la section fonctionnement */
 .steps{
     display:flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    font-weight: 700;
 }
-.fonctionnement{
-    border: 2px solid rgb(45, 70, 42);
-    padding: 0.5em 0.5em;
-    border-radius: 20px;
+
+.steps_contain_num{ 
+    display: flex;
+    align-content: center;
+    border: 4px solid #ddbb92;
+    border-radius: 50% ;
+    background-color: #b49876;
+    height: 30px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+        top: 50px;
+        left: -25px;
 }
+
+.steps_contain_text{
+    border: 4px solid #ad742f;
+    background-color: #d09f62;
+    padding: 20px 100px;
+    border-radius: 30px;
+}
+
+
+/* Style du click qui renvoie vers la map  */
+
+.para_click{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    color: #ad742f;
+    background-color: #e5dcd2;
+    height: 70px;
+    margin-top: 40px;
+}
+
+
+/* Style des phrases animées */
 
 .parentsTransitions {
     width: 100%;
-    height: 50%;
-    position: inherit;
-    overflow: hidden;
+    margin-bottom: 40px;
+    /* position: inherit; */
+    /* overflow: hidden; */
 }
 
 #tongue_transitions {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    /* Permet de se déplacer dans le parent */
-    animation: moveAround 5s infinite linear;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    gap: 40px;
+    /* width: 100%;
+    height: 100%; */
 }
 
-/* transition lettres  */
+.items{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* .ml2 {
+    font-weight: 900;
+    font-size: 3.5em;
+  } */
+  
+.ml2 .sentence {
+    /* display: inline-block; */
+    line-height: 1em;
+}
+
+/* 
 .item-1,
 .item-2,
 .item-3,
@@ -147,16 +196,12 @@ p {
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
     opacity: 0;
-}
+} */
 
 
-.para_click{
-    text-align: center;
-    cursor: pointer;
-    font-size: 0.9rem;
-    text-decoration: underline;
-    color: black;
-}
+
+
+/* Style du footer */
 
 footer {
     display: flex;
@@ -164,7 +209,7 @@ footer {
     justify-content: space-between;
     gap: 20px;
     color: white;
-    background-color: #333;
+    background-color: #d09f62;
     height: 10%;
     padding: 20px;
 }
