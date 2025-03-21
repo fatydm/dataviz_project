@@ -11,8 +11,6 @@ async function obtenerRecetasPorArea(area) {
     divRecipes.innerHTML = `
     <h2>${data.meals.length} recettes</h2>`;
 
-    
-
     for (let i = 0; i < data.meals.length; i++) {
          divRecipes.innerHTML += `
         
@@ -28,8 +26,7 @@ async function obtenerRecetasPorArea(area) {
 const mexicanButton = document.querySelector('[data-name="Mexico"]')
 mexicanButton.addEventListener("click", () => {
         (obtenerRecetasPorArea("Mexican"))
-        divRecipes.innerHTML = ""
-
+        divRecipes.innerHTML = ""   
 })
 
 
