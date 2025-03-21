@@ -144,7 +144,10 @@ svg {
 }
 
 
-
+.eachMeal{
+    border: 2px solid black;
+    width: 250px;
+}
 .meal-title {
     font-size: 18px; /* Taille de police de base */
     color: blue;
