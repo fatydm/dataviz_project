@@ -5,23 +5,25 @@ body {
     margin: 0; /* Supprime les marges par défaut du body */
 }
 
-
-
-
-
-
 .container-map path {
     fill : #329a54;
     stroke: black;/* linea */
     stroke-width: 1,5px;
 }
 
- .container-map :hover{ /*para cuando se mueva el pointer cambie de color */
-    fill : palegreen;
-    
+.container-map :hover{ /*para cuando se mueva el pointer cambie de color */
+    fill : rgb(75, 136, 45);
 }
 
+.divRecipes{
+    background-color: white;
+    width: 500px;
+}
 
+.eachMeal{
+    border: 2px solid black;
+    width: 250px;
+}
 .meal-title {
     font-size: 18px; /* Taille de police de base */
     color: blue;

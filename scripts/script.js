@@ -85,10 +85,4 @@ function animateNextBatch() {
     setTimeout(animateNextBatch, 10000);
 }
 
-
 animateNextBatch();
-
-
-
-
-
