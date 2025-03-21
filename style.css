@@ -16,22 +16,22 @@ body {
 
 /* Style du header, navbar et du logo */
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.header {
     background-color: #d09f62;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9em;
 }
 
 nav {
     display: flex;
-    justify-content: flex-end;
     padding: 12px;
     background-color: #d09f62;
-    width: auto;
+    height: 65px;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 a {
@@ -40,19 +40,18 @@ a {
     width: 100px;
     border-radius: 18px;
     font: bold 12px Verdana;
+
 }
 
 a:focus {
     text-decoration: underline;
 }
 
-.logo {
-    height: 60px;
-    width: auto;
-    background-color: #d09f62;
-}
-
 /* Style du body */
+
+.logo {
+    height: 200px;
+}
 
 .container {
     flex: 1;
@@ -68,21 +67,27 @@ h1 {
 p {
     font-size: 1.2rem;
     text-align: center;
-
 }
 
 .explanation_site {
     background-color: #eadbca;
     margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+  
 }
 
 
 /* Style de la section fonctionnement */
 .steps {
+
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    margin-left: 20px;
     font-weight: 700;
 }
 
@@ -110,6 +115,7 @@ p {
     background-color: #d09f62;
     padding: 20px 100px;
     border-radius: 30px;
+    text-align: center;
 }
 
 
@@ -162,6 +168,7 @@ footer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     gap: 20px;
     color: white;
     background-color: #d09f62;
@@ -172,8 +179,3 @@ footer {
 .footer_link {
     border: none;
 }
-
-/* STYLE CSS DE LA PAGE ABOUT */
-
-
-/* STYLE CSS DE LA PAGE CONTACT */
