@@ -83,10 +83,10 @@ function animate() {
             translateZ: 0,
             easing: "easeOutExpo",
             duration: 950,
-            delay: (el, i) => 70 * i + (index * 1000) // Ajout du délai pour chaque wrapper
+            delay: (el, i) => 70 * i + (index * 1000) 
           })
           .add({
-            targets: span, // Cibler le span entier pour la disparition
+            targets: span,
             opacity: 0,
             duration: 1000,
             easing: "easeOutExpo",
@@ -96,5 +96,5 @@ function animate() {
     });
   }
   
-  animate(); // Lancer l'animation
+  animate();
 
