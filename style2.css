@@ -1,25 +1,148 @@
+/* Resetting default styles */
 body {
-    background: radial-gradient(circle, rgba(190,228,250,1) 0%, rgba(50,128,154,1) 100%);;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+/* Page container */
+.page {
+    width: 100%;
+    height: 100vh;
     display: flex;
-    place-content: center center;
-    margin: 0; /* Supprime les marges par défaut du body */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+/* Container for the globe */
+.globe-wrapper {
+    margin-top: 9vh; /* Adjust as needed */
+    position: relative;
+}
+
+/* Info overlay */
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.info span {
+    font-weight: bold;
+    text-shadow: 0 0 5px #ffffff; /* Adding text shadow for better visibility */
+    padding: .2em .6em;
+    border-radius: 2px;
+    font-size: 2em;
+}
+
+/* Prevent selection and provide better touch interaction */
+canvas {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Hide SVG */
+svg {
+    position: fixed;
+    top: 0;
+    visibility: hidden;
 }
 
 
-
-
-
-
-.container-map path {
-    fill : #329a54;
-    stroke: black;/* linea */
-    stroke-width: 1,5px;
+/* Resetting default styles */
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: sans-serif;
 }
 
- .container-map :hover{ /*para cuando se mueva el pointer cambie de color */
-    fill : palegreen;
-    
+/* Page container */
+.page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 3;
 }
+
+/* Container for the globe */
+.globe-wrapper {
+    margin-top: 9vh; /* Adjust as needed */
+    position: relative;
+}
+
+/* Info overlay */
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.info span {
+    font-weight: bold;
+    text-shadow: 0 0 5px #ffffff; /* Adding text shadow for better visibility */
+    padding: .2em .6em;
+    border-radius: 2px;
+    font-size: 2em;
+}
+
+/* Prevent selection and provide better touch interaction */
+canvas {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Hide SVG */
+svg {
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+}
+
+#areas-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: absolute;  /* Ajoute cette ligne pour positionner au besoin */
+    top: 100px;  /* Ajuste pour positionner au bon endroit */
+    left: 50%;  /* Centrer */
+    transform: translateX(-50%);  /* Centrer */
+    display: none;  /* Zones cachées par défaut */
+    z-index: 1000;  /* Pour s'assurer que ça s'affiche par dessus */
+}
+
 
 
 .meal-title {
