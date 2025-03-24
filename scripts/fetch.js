@@ -1,6 +1,7 @@
 import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js"; // permett de interagir avec l'objet 3D
 import gsap from "gsap"; //bibliotheque JS creer des animations 
+import { log } from "three/tsl";
 
 const containerEl = document.querySelector(".globe-wrapper"); //container principal du monde
 const canvasEl = containerEl.querySelector("#globe-3d");// cotient canvas l'objet 3D
@@ -331,6 +332,7 @@ const areas = {
             
             const divRecipes = document.getElementById("recipes-container");
             const numeroRecettes = document.createElement("h2");
+
             numeroRecettes.textContent = `${data.meals.length} recettes pour ${area}`;
             divRecipes.appendChild(numeroRecettes);
             
@@ -338,16 +340,37 @@ const areas = {
                  const recipeDiv = document.createElement("div");
                  recipeDiv.innerHTML = `
                     <h3 class="meal-title">${meal.strMeal}</h3>
+                    <p data-mealId="${meal.idMeal}" class="btnRecetas">voir la recette</p>
                     <img class="meal-image" src="${meal.strMealThumb}" alt="${meal.strMeal}">
                 `
                 divRecipes.appendChild(recipeDiv);
-                ;
+
+                const arrayBtnRecetas = document.getElementsByClassName('btnRecetas');
+                for(let i = 0; i < arrayBtnRecetas.length; i++){
+                    arrayBtnRecetas[i].addEventListener("click", recetasVideoById)
+                }
             });
+
             console.log(divRecipes.innerHTML); // Vérifie si le HTML est bien mis à jour
         } else {
             console.log(`Aucune recette trouvée pour la zone : ${area}`);
         }
     }
+
+   
+// début de mes essais
+    async function recetasVideoById(event){
+        console.log('coucou', event)
+        const url =`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${event}`
+        const respuesta = await fetch(url)
+        const data = await respuesta.json()
+
+        const d = event.target.dataset.mealId
+        const g = data.meals[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        
+    }
+
+    
     
 
 
