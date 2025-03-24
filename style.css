@@ -20,6 +20,9 @@ header {
     justify-content: space-between;
     color: white;
     font-weight: 600;
+}
+
+header p{
     font-size: 0.9em;
 }
 
@@ -38,7 +41,6 @@ a {
     width: 100px;
     border-radius: 18px;
     font: bold 12px Verdana;
-
 }
 
 a:focus {
@@ -182,7 +184,6 @@ footer {
     gap: 20px;
     color: white;
     background-color: #d09f62;
-    height: 10%;
     padding: 20px;
 }
 
