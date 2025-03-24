@@ -1,3 +1,12 @@
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+}
+
 /* Style du header, navbar et du logo */
 header {
     background-color: #d09f62;
@@ -11,7 +20,6 @@ header {
 
 nav {
     display: flex;
-    padding: 12px;
     background-color: #d09f62;
     height: 65px;
     justify-content: flex-end;
@@ -37,12 +45,13 @@ a:focus {
 
 .contacto {
     margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .contacto h2 {
     text-align: center;
     margin-bottom: 1rem;
-    color: #4756df;
+    color:#d09f62;
     font-weight: bolder;
 }
 
@@ -52,14 +61,14 @@ a:focus {
     padding: 0.938rem;
     border-radius: 5px;
     box-shadow: 0 3px 10px;
-    color: #4756df;
+    color:#d09f62;
     font-weight: bolder;
 }
 
 .control-formulario label {
     line-height: 2.7em;
     font-weight: bolder;
-    color: #4756df;
+    color:#d09f62;
     font-size: 20px;
 }
 
@@ -74,7 +83,7 @@ a:focus {
     padding-bottom: 10px;
     border-radius: 5px;
     border: none;
-    border: 2px outset #4756df;
+    border: 2px outset#d09f62;
     font-size: 1rem;
     font-family: "Young Serif", serif;
 }
@@ -84,22 +93,20 @@ a:focus {
     padding: 10px;
     margin: 10px 0;
     background-color: #fcfcfc;
-    border: 2px solid #4756df;
+    border: 2px solid#d09f62;
     border-radius: 5px;
     font-size: 1.5rem;
     font-weight: bolder;
-    color: #4756df;
+    color:#d09f62;
     font-family: "Young Serif", serif;
 }
 
-
 .submit-btn:hover {
     background-color: lavender;
-    border: 2px solid #4756df;
+    border: 2px solid#d09f62;
     cursor: pointer;
     font-weight: 900;
 }
-
 
 /* Style du footer */
 footer {
@@ -111,11 +118,9 @@ footer {
     color: white;
     background-color: #d09f62;
     height: 10%;
-    padding: 20px;
 }
 
 .footer_link {
     border: none;
     margin: 0 10px;
-    /* Agrega un espacio horizontal entre los enlaces */
 }
