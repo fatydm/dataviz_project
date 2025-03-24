@@ -1,4 +1,4 @@
-import * as THREE from "three"; //bibliotheque 3D
+import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js"; // permett de interagir avec l'objet 3D
 import gsap from "gsap";
 
@@ -7,19 +7,13 @@ const canvasEl = containerEl.querySelector("#globe-3d");// cotient canvas l'obje
 const svgMapDomEl = document.querySelector("#map");// le format svg
 const svgCountries = Array.from(svgMapDomEl.querySelectorAll("path")); //obtient chaque pays.Array.from() convierte la NodeList en un array real para poder usar métodos como .forEach() o .map().
 const svgCountryDomEl = document.querySelector("#country"); //pour selectionner le pays en question
-const countryNameEl = document.querySelector(".info span"); //va monter le nombre de pays ou l'action quon veut 
+let countryNameEl = document.querySelector(".info span"); //va monter le nombre de pays ou l'action quon veut 
 
-
-
-
-countryNameEl = svgCountries[hoveredCountryIdx].getAttribute("data-name");
 
 
 let renderer, scene, camera, rayCaster, pointer, controls;
 let globeGroup, globeColorMesh, globeStrokesMesh, globeSelectionOuterMesh;
-// globeColorMesh: Malla para la textura de color del globo.
-// globeStrokesMesh: Malla para los contornos del globo.
-// globeSelectionOuterMesh: Malla para el efecto de selección al pasar sobre un país.
+
 
 const svgViewBox = [2000, 1000]; //definit la taille du map SVG
 const offsetY = -.1;

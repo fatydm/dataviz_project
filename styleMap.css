@@ -1,3 +1,38 @@
+/* Style du header, navbar et du logo */
+header {
+    background-color: #d09f62;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+nav {
+    display: flex;
+    padding: 12px;
+    background-color: #d09f62;
+    height: 65px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    width: 100px;
+    border-radius: 18px;
+    font: bold 12px Verdana;
+
+}
+
+a:focus {
+    text-decoration: underline;
+}
+
+
+
 body {
     padding: 0;
     margin: 0;
@@ -92,4 +127,21 @@ h2 {
     color: red;
 }
 
+/* Style du footer */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    background-color: #d09f62;
+    height: 10%;
+    padding: 20px;
+}
+
+.footer_link {
+    border: none;
+    margin: 0 10px; /* Agrega un espacio horizontal entre los enlaces */
+}
 
