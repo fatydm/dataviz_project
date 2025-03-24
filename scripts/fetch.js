@@ -1,6 +1,9 @@
 import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js"; // permett de interagir avec l'objet 3D
 import gsap from "gsap"; //bibliotheque JS creer des animations 
+import {obtenerRecetasPorArea, areas} from "./recettes.js";  // obtenir les async des recettes. il faut de ./ pour dire que cest un fichier a nous et pas dasn un bibliotheque
+// import { rechercherChansons,afficherChansons } from "./music.js";
+
 
 const containerEl = document.querySelector(".globe-wrapper"); //container principal du monde
 const canvasEl = containerEl.querySelector("#globe-3d");// cotient canvas l'objet 3D
@@ -23,7 +26,7 @@ const offsetY = -.1;
 const params = {
     strokeColor: "#111111", //couleur du conteur
     defaultColor: "#9a9591", //couleur des pays
-    hoverColor: "#008f39", // couleur quand on passe le cursor
+    hoverColor: "#D09f62", // couleur quand on passe le cursor
     fogColor: "#e4e5e6",  //
     fogDistance: 2.65, // l'effet du back des pays 
     strokeWidth: 1.5, // taille de conteur des frontieres
@@ -58,8 +61,14 @@ containerEl.addEventListener("click", (e) => { //ecoute le'evenement du click
     afficherRecettes.innerHTML = "";
     const area = areas[countryName];
     if (area) {
-        obtenerRecetasPorArea(area);
+        obtenerRecetasPorArea(area, svgCountries, hoveredCountryIdx);
     } 
+// const affichertousChansons =  document.getElementById("music-container")
+//  affichertousChansons.innerHTML = "";
+// const genreMusical = 'pop'; // ou 'rock', 'hip-hop', etc.
+// const pays = countryName; // ou 'USA', 'UK', etc.
+// const maCleApi = 'AIzaSyAx7Fx7yCkS28Kpz48rdCeRG8G68RJfC1E'; 
+//    afficherChansons(genreMusical, pays, maCleApi);
 });
 
 function updateMousePosition(eX, eY) { //function qui met à jour les coordonnes de la souris
@@ -281,115 +290,3 @@ function updateSize() {
 
 
 
-
-
-// Correspondance entre les pays dans le SVG et les aires dans l'API
-const areas = {
-        "United States": "American",
-        "United Kingdom": "British",
-        "Canada": "Canadian",
-        "China": "Chinese",
-        "Croatia": "Croatian",
-        "Netherlands": "Dutch",
-        "Egypt": "Egyptian",
-        "Philippines": "Filipino",
-        "France": "French",
-        "Greece": "Greek",
-        "India": "Indian",
-        "Ireland": "Irish",
-        "Italy": "Italian",
-        "Jamaica": "Jamaican",
-        "Japan": "Japanese",
-        "Kenya": "Kenyan",
-        "Malaysia": "Malaysian",
-        "Mexico": "Mexican",
-        "Morocco": "Moroccan",
-        "Poland": "Polish",
-        "Portugal": "Portuguese",
-        "Russian Federation": "Russian",
-        "Spain": "Spanish",
-        "Thailand": "Thai",
-        "Tunisia": "Tunisian",
-        "Turkey": "Turkish",
-        "Ukraine": "Ukrainian",
-        "Uruguay": "Uruguayan",
-        "Vietnam": "Vietnamese"
-    };
-
-
-
-
-    // Fonction pour obtenir des recettes par aire
-    async function obtenerRecetasPorArea(area) {
-        console.log("Buscando recetas para:", area);
-        const url = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`;
-        const respuesta = await fetch(url);
-        const data = await respuesta.json();
-        console.log(data.meals); // Verifica si hay datos
-    
-        if (data.meals) {
-            
-            const divRecipes = document.getElementById("recipes-container");
-            const numeroRecettes = document.createElement("h2");
-            numeroRecettes.textContent = `${data.meals.length} recettes pour ${area}`;
-            divRecipes.appendChild(numeroRecettes);
-            
-            data.meals.forEach((meal) => { 
-                 const recipeDiv = document.createElement("div");
-                 recipeDiv.innerHTML = `
-                    <h3 class="meal-title">${meal.strMeal}</h3>
-                    <img class="meal-image" src="${meal.strMealThumb}" alt="${meal.strMeal}">
-                `
-                divRecipes.appendChild(recipeDiv);
-                ;
-            });
-            console.log(divRecipes.innerHTML); // Vérifie si le HTML est bien mis à jour
-        } else {
-            console.log(`Aucune recette trouvée pour la zone : ${area}`);
-        }
-    }
-    
-
-
-
-    
-   
-    
-
-// async function rechercherChansons(genre, pays, cleApi) {
-//     const requete = await fetch(`https://www.googleapis.com/youtube/v3/search?part=snippet&q=${genre} music ${pays}&type=video&key=${cleApi}&maxResults=5`);
-//     const reponse = await requete.json();
-
-//     if (reponse.items) {
-//         return reponse.items.map((item) => ({
-//             // map va a buscar cada letra en los objetos para ver si corresponde
-//             titre: item.snippet.title.slice(0, 20),
-//             miniature: item.snippet.thumbnails.default.url,
-//             link: `https://www.youtube.com/watch?v=$${item.id.videoId}`, 
-//         }));
-//     } else {
-//         return [];
-//     }
-// }
-
-async function afficherChansons(genre, pays, cleApi) {
-    const chansons = await rechercherChansons(genre, pays, cleApi);
-    if (chansons.length > 0) {
-        chansons.forEach((chanson) => {
-            const musica = document.createElement("div");
-            musica.innerHTML = `
-        <h4>${chanson.titre}</h4>
-        <a href="${chanson.url}" target="_blank">Voir la vidéo</a>
-        <img src="${chanson.miniature}" alt="Miniature de la vidéo">
-         `;
-          body.appendChild(musica);
-        });
-    } else {
-        console.log(`Aucune chanson ${genre} trouvée en ${pays}.`);
-    }
-}
-// // Exemple d'utilisation
-// const genreMusical = 'pop'; // ou 'rock', 'hip-hop', etc.
-// const pays = 'France'; // ou 'USA', 'UK', etc.
-// const maCleApi = 'AIzaSyAx7Fx7yCkS28Kpz48rdCeRG8G68RJfC1E'; // Remplacez par votre clé API
-// afficherChansons(genreMusical, pays, maCleApi);

@@ -18,7 +18,7 @@ nav {
 }
 
 a {
-    color: white;
+    color: #f6c28b;
     text-decoration: none;
     width: 100px;
     border-radius: 18px;
@@ -49,11 +49,7 @@ body {
 
 /* Container for the globe */
 .globe-wrapper {
-<<<<<<< HEAD:style2.css
     width: 50%; /* Le globe prend la moitié de la largeur */
-=======
-    margin-top: 9vh; 
->>>>>>> 8024061c5b2814b6244a2416d1f6cf6d108be33b:styleMap.css
 }
 
 /* Info overlay */
@@ -121,6 +117,7 @@ svg#map {
     height: 82vh;
 }
 
+
 .eachMeal {
     border: 2px solid black;
     width: 250px;
@@ -128,7 +125,7 @@ svg#map {
 
 .meal-title {
     font-size: 18px;
-    color: blue;
+    color: #f6c28b;
 }
 
 .meal-image {
@@ -141,8 +138,50 @@ svg#map {
 }
 
 h2 {
-    color: red;
+    color: #A57548;
 }
+
+
+
+
+#music-container {
+    position: relative;
+    background-color: white;
+    padding: 10px;
+    margin-left: 20px; /* Ajout d'une marge à gauche */
+    margin-top: 9vh;
+    overflow-y: auto; /* Ajout d'une barre de défilement si nécessaire */
+    height: 82vh;
+}
+
+.chanson{
+    font-size: 18px;
+    color: #f6c28b;
+}
+
+.linkMusic{
+    color: #f6c28b;
+    text-decoration: none;
+    width: 100px;
+    border-radius: 18px;
+    font: bold 12px Verdana;
+}
+
+.imgMusic{
+    width: 80%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+h2 {
+    color: #A57548;
+}
+
+
+
 
 
 /* Style du footer */
