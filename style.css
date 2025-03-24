@@ -65,8 +65,9 @@ h1 {
 }
 
 p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     text-align: center;
+    font-weight: 700;
 }
 
 .explanation_site {
@@ -82,17 +83,17 @@ p {
 
 /* Style de la section fonctionnement */
 .steps {
-
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     margin-left: 20px;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .steps_contain {
     width: 30%;
+    
 }
 
 .steps_contain_num {
