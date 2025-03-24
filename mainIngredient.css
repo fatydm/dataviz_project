@@ -1,0 +1,79 @@
+html,
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin: 0;
+}
+
+/* Style du header, navbar et du logo */
+header {
+    background-color: #d09f62;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    font-weight: 600;
+}
+
+header p{
+    font-size: 0.9em;
+}
+
+nav {
+    display: flex;
+    background-color: #d09f62;
+    height: 65px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    width: 100px;
+    border-radius: 18px;
+    font: bold 12px Verdana;
+
+}
+
+a:focus {
+    text-decoration: underline;
+}
+
+/* Style du body */
+
+.images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    cursor: pointer;
+    width: 400px;
+    height: 330px;
+    gap: 30px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+/* Style du footer */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    background-color: #d09f62;
+    
+}
+
+.footer_link {
+    border: none;
+    margin: 0 10px;
+}

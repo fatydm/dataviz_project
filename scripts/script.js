@@ -1,7 +1,5 @@
 // import {scene} from './visualmap.js';
 
-
-
 function displaySentence() {
     const divSentences = document.getElementById('tongue_transitions');
 
@@ -63,7 +61,7 @@ function animate() {
       const spanElements = wrapper.querySelectorAll('.sentence');
   
       spanElements.forEach((span, i) => {
-        // Diviser le texte en lettres et les envelopper dans des spans
+
         span.innerHTML = span.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
         const letters = span.querySelectorAll('.letter');
   
