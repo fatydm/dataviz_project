@@ -42,6 +42,23 @@ a:focus {
     text-decoration: underline;
 }
 
+/* Style du body */
+
+.images {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    cursor: pointer;
+    width: 300px;
+    height: 330px;
+    border-radius: 50%;
+    margin: 20px;
+}
 
 /* Style du footer */
 footer {

@@ -15,7 +15,7 @@
     <p>Les dénicheurs des bonnes recettes</p>
     <nav>
       <a href="../index.html">Accueil</a>
-      <a href="./html/randomMeal.html">Les Recettes</a>
+      <a href="./mainIngredient.html">Les Recettes</a>
     </nav>
   </header>
 
@@ -27,8 +27,7 @@
         <div class="control-formulario">
           <label for="name">Prenom</label>
           <!-- Il y a aussi un attribut name pour tous les champs input. Ceci est requis par le service d'envoi de formulaires de Formspree. -->
-          <input type="text" id="name" name="sender-name" placeholder="Votre prenom" class="input-field"
-            required />
+          <input type="text" id="name" name="sender-name" placeholder="Votre prenom" class="input-field" required />
           <!-- required, de cette façon, le formulaire refuse d'envoyer les informations si l'utilisateur laisse un champ vide. -->
         </div>
         <div class="control-formulario">
@@ -37,8 +36,8 @@
         </div>
         <div class="control-formulario">
           <label for="mensaje">Recette</label>
-          <textarea id="mensaje" cols="60" rows="10" placeholder="Votre message ou votre proposition de recette" name="mensaje"
-            class="input-field" required></textarea>
+          <textarea id="mensaje" cols="60" rows="10" placeholder="Votre message ou votre proposition de recette"
+            name="mensaje" class="input-field" required></textarea>
           <!-- textarea pour que les gens puissent écrire le message qu'ils veulent envoyer. -->
           <input type="submit" value="Envoyez" id="submit-btn" class="submit-btn" />
       </form>
