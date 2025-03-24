@@ -1,4 +1,4 @@
-import * as THREE from "three"; //bibliotheque 3D
+import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js"; // permett de interagir avec l'objet 3D
 import gsap from "gsap"; //bibliotheque JS creer des animations 
 
@@ -15,6 +15,7 @@ let globeGroup, globeColorMesh, globeStrokesMesh, globeSelectionOuterMesh;
 // globeColorMesh: Malla para la textura de color del globo.
 // globeStrokesMesh: Malla para los contornos del globo.
 // globeSelectionOuterMesh: Malla para el efecto de selección al pasar sobre un país.
+
 
 const svgViewBox = [2000, 1000]; //definit la taille du map SVG
 const offsetY = -.1;

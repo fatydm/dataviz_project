@@ -1,65 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../styleProposition.css">
 
 </head>
-<body>
-      <!-- Sección Contacto-->
 
-      <section class="contacto" id="contacto">
-        <h2>Contactez-nous!</h2>
-        <div class="formulario-contacto-contenedor">
-            <form action="https://formspree.io/f/mjkgrkqk" method="POST">
-<!-- Avec Formspree, vous pouvez recevoir le message directement dans la boîte de réception de votre e-mail sans avoir besoin de configurer un serveur avec du PHP ou du JavaScript complexe. -->
-              <div class="control-formulario">
-                <label for="name">Prenom</label>
-     <!-- Il y a aussi un attribut name pour tous les champs input. Ceci est requis par le service d'envoi de formulaires de Formspree. --> 
-                <input
-                  type="text"
-                  id="name"
-                  name="sender-name"
-                  placeholder="Ecrire ton prenom"
-                  class="input-field"
-                  required
-                />
-            <!-- required, de cette façon, le formulaire refuse d'envoyer les informations si l'utilisateur laisse un champ vide. --> 
-              </div>
-              <div class="control-formulario">
-                <label for="email">e-mail</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="sender-email"
-                  placeholder="Votre e-mail"
-                  class="input-field"
-                  required
-                />
-              </div>
-              <div class="control-formulario">
-                <label for="mensaje">Recette</label>
-                <textarea
-                  id="mensaje"
-                  cols="60"
-                  rows="10"
-                  placeholder="Ecris-nous ton recette"
-                  name="mensaje"
-                  class="input-field"
-                  required
-                ></textarea>
-               <!-- textarea pour que les gens puissent écrire le message qu'ils veulent envoyer. -->
-              <input
-                type="submit"
-                value="Envoyez"
-                id="submit-btn"
-                class="submit-btn"
-              />
-            </form>
-          </div>
+<body>
+
+  <header>
+    <p>Les dénicheurs des bonnes recettes</p>
+    <nav>
+      <a href="../index.html">Accueil</a>
+      <a href="./html/menus.html">Les Recettes</a>
+    </nav>
+  </header>
+
+  <section class="contacto" id="contacto">
+    <h2>Contactez-nous!</h2>
+    <div class="formulario-contacto-contenedor">
+      <form action="https://formspree.io/f/mjkgrkqk" method="POST">
+        <!-- Avec Formspree, vous pouvez recevoir le message directement dans la boîte de réception de votre e-mail sans avoir besoin de configurer un serveur avec du PHP ou du JavaScript complexe. -->
+        <div class="control-formulario">
+          <label for="name">Prenom</label>
+          <!-- Il y a aussi un attribut name pour tous les champs input. Ceci est requis par le service d'envoi de formulaires de Formspree. -->
+          <input type="text" id="name" name="sender-name" placeholder="Ecrire ton prenom" class="input-field"
+            required />
+          <!-- required, de cette façon, le formulaire refuse d'envoyer les informations si l'utilisateur laisse un champ vide. -->
         </div>
-      </section>
+        <div class="control-formulario">
+          <label for="email">e-mail</label>
+          <input type="email" id="email" name="sender-email" placeholder="Votre e-mail" class="input-field" required />
+        </div>
+        <div class="control-formulario">
+          <label for="mensaje">Recette</label>
+          <textarea id="mensaje" cols="60" rows="10" placeholder="Ecris-nous ton recette" name="mensaje"
+            class="input-field" required></textarea>
+          <!-- textarea pour que les gens puissent écrire le message qu'ils veulent envoyer. -->
+          <input type="submit" value="Envoyez" id="submit-btn" class="submit-btn" />
+      </form>
+    </div>
+    </div>
+  </section>
+  <footer>
+    <h3>Global Fooder</h3>
+    <div class="footer_text">
+      <a class="footer_link" href="./html/recetteProposition.html">Une recette à nous proposer</a>
+      <a class="footer_link" href="#">Mentions légales</a>
+    </div>
+  </footer>
 </body>
+
 </html>
