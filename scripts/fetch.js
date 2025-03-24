@@ -1,18 +1,20 @@
 import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js"; // permett de interagir avec l'objet 3D
-import gsap from "gsap";
+import gsap from "gsap"; //bibliotheque JS creer des animations 
 
 const containerEl = document.querySelector(".globe-wrapper"); //container principal du monde
 const canvasEl = containerEl.querySelector("#globe-3d");// cotient canvas l'objet 3D
 const svgMapDomEl = document.querySelector("#map");// le format svg
 const svgCountries = Array.from(svgMapDomEl.querySelectorAll("path")); //obtient chaque pays.Array.from() convierte la NodeList en un array real para poder usar métodos como .forEach() o .map().
 const svgCountryDomEl = document.querySelector("#country"); //pour selectionner le pays en question
-let countryNameEl = document.querySelector(".info span"); //va monter le nombre de pays ou l'action quon veut 
-
+const countryNameEl = document.querySelector(".info span"); //va monter le nombre de pays ou l'action quon veut 
 
 
 let renderer, scene, camera, rayCaster, pointer, controls;
 let globeGroup, globeColorMesh, globeStrokesMesh, globeSelectionOuterMesh;
+// globeColorMesh: Malla para la textura de color del globo.
+// globeStrokesMesh: Malla para los contornos del globo.
+// globeSelectionOuterMesh: Malla para el efecto de selección al pasar sobre un país.
 
 
 const svgViewBox = [2000, 1000]; //definit la taille du map SVG
@@ -52,14 +54,12 @@ containerEl.addEventListener("click", (e) => { //ecoute le'evenement du click
     updateMousePosition(e.clientX, e.clientY);
     const countryName = svgCountries[hoveredCountryIdx].getAttribute("data-name");
     countryNameEl.innerHTML = countryName;
+    const afficherRecettes = document.getElementById ("recipes-container")
+    afficherRecettes.innerHTML = "";
     const area = areas[countryName];
     if (area) {
         obtenerRecetasPorArea(area);
-    }
-// const genreMusical = 'pop'; // ou 'rock', 'hip-hop', etc.
-// const pays = 'France'; // ou 'USA', 'UK', etc.
-// const maCleApi = 'AIzaSyAx7Fx7yCkS28Kpz48rdCeRG8G68RJfC1E'; // Remplacez par votre clé API
-afficherChansons('pop', 'France','AIzaSyAx7Fx7yCkS28Kpz48rdCeRG8G68RJfC1E');
+    } 
 });
 
 function updateMousePosition(eX, eY) { //function qui met à jour les coordonnes de la souris
@@ -316,6 +316,9 @@ const areas = {
         "Vietnam": "Vietnamese"
     };
 
+
+
+
     // Fonction pour obtenir des recettes par aire
     async function obtenerRecetasPorArea(area) {
         console.log("Buscando recetas para:", area);
@@ -325,14 +328,19 @@ const areas = {
         console.log(data.meals); // Verifica si hay datos
     
         if (data.meals) {
+            
             const divRecipes = document.getElementById("recipes-container");
-            divRecipes.innerHTML = `<h2>${data.meals.length} recettes pour ${area}</h2>`;
+            const numeroRecettes = document.createElement("h2");
+            numeroRecettes.textContent = `${data.meals.length} recettes pour ${area}`;
+            divRecipes.appendChild(numeroRecettes);
+            
             data.meals.forEach((meal) => { 
-                const affichage =`
+                 const recipeDiv = document.createElement("div");
+                 recipeDiv.innerHTML = `
                     <h3 class="meal-title">${meal.strMeal}</h3>
                     <img class="meal-image" src="${meal.strMealThumb}" alt="${meal.strMeal}">
                 `
-                divRecipes.insertAdjacentHTML('afterbegin', affichage);
+                divRecipes.appendChild(recipeDiv);
                 ;
             });
             console.log(divRecipes.innerHTML); // Vérifie si le HTML est bien mis à jour

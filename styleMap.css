@@ -41,27 +41,29 @@ body {
     font-family: sans-serif;
 }
 
+
+
 /* Page container */
 .page {
-    width: 100%;
-    height: 100vh;
-    display: flex;
+    display: flex; /* Utilisation de Flexbox */
     justify-content: center;
     align-items: center;
 }
 
 /* Container for the globe */
 .globe-wrapper {
+<<<<<<< HEAD:style2.css
+    width: 50%; /* Le globe prend la moitié de la largeur */
+=======
     margin-top: 9vh; 
+>>>>>>> 8024061c5b2814b6244a2416d1f6cf6d108be33b:styleMap.css
 }
 
 /* Info overlay */
 .info {
     top: 0;
     left: 0;
-    width: 100%;
     text-align: center;
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,7 +72,7 @@ body {
 
 .info span {
     font-weight: bold;
-    text-shadow: 0 0 5px #ffffff; /* Adding text shadow for better visibility */
+    text-shadow: 0 0 5px #ffffff;
     padding: .2em .6em;
     border-radius: 2px;
     font-size: 2em;
@@ -94,40 +96,57 @@ svg {
     visibility: hidden;
 }
 
-
-#recipes-container{
-    display: block !important;
-    position: relative;
-    z-index: 4; /* S'assurer qu'il apparaît au-dessus */
-    background-color: white;
-    padding: 10px;
-    border: 1px solid black;
-    width: 90%;
-    max-width: 800px;
-    margin: 20px auto;
+/* pour que le SVG n'occupe pas tout le espace */
+svg#map {
+    position: absolute; /* Ajout de position absolue */
+    top: 0;
+    visibility: hidden;
+    width: 0; /* Ajout de largeur 0 */
+    height: 0; /* Ajout de hauteur 0 */
 }
 
-.eachMeal{
+/* pour que le div country n'occupe pas tout le espace */
+#country{
+    position: absolute; /* Ajout de position absolue */
+    top: 0;
+    visibility: hidden;
+    width: 0; /* Ajout de largeur 0 */
+    height: 0; /* Ajout de hauteur 0 */
+}
+
+#recipes-container {
+    position: relative;
+    background-color: white;
+    padding: 10px;
+    margin-left: 20px; /* Ajout d'une marge à gauche */
+    margin-top: 9vh;
+    overflow-y: auto; /* Ajout d'une barre de défilement si nécessaire */
+    height: 82vh;
+}
+
+.eachMeal {
     border: 2px solid black;
     width: 250px;
 }
+
 .meal-title {
-    font-size: 18px; /* Taille de police de base */
+    font-size: 18px;
     color: blue;
 }
 
 .meal-image {
-    width: 80%;/* Définir la largeur de l'image */
-    max-width: 180px; /* Réduire la largeur maximale de l'image */
-    height: auto; /* Conserver le ratio d'aspect */
-    border-radius: 10px; /* Ajouter des coins arrondis */
-    display: block; /* Pour éviter les espaces inutiles autour de l'image */
-    margin: 10px auto; /* Centrer l'image horizontalement et ajouter une marge */
+    width: 80%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
 }
 
 h2 {
     color: red;
 }
+
 
 /* Style du footer */
 footer {
