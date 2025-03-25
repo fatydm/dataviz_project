@@ -74,6 +74,7 @@ async function getYouTubeLink(mealId, recipeDiv) {
         const youtubeLink = mealDetailsData.meals[0].strYoutube; //Vérifie si le premier élément du tableau meals a une propriété strYoutube 
         const youtubeLinkElement = document.createElement("a");
         youtubeLinkElement.href = youtubeLink;
+        console.log(youtubeLinkElement)
         youtubeLinkElement.textContent = "Pour la recette, regardez sa vidéo";
         youtubeLinkElement.target = "_blank"; // Ouvre le lien dans un nouvel onglet
         recipeDiv.appendChild(youtubeLinkElement);
