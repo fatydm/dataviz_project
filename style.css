@@ -82,11 +82,11 @@ p {
 /* Style de la section fonctionnement */
 .steps {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     margin-left: 20px;
     font-weight: 600;
+    height: 6%;
 }
 
 .steps_contain {

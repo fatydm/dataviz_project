@@ -21,7 +21,7 @@ nav {
 }
 
 a {
-    color: white;
+    color: #f6c28b;
     text-decoration: none;
     width: 100px;
     border-radius: 18px;
@@ -52,7 +52,7 @@ body {
 
 /* Container for the globe */
 .globe-wrapper {
-    margin-top: 9vh; 
+    width: 50%; /* Le globe prend la moitié de la largeur */
 }
 
 /* Info overlay */
@@ -120,6 +120,7 @@ svg#map {
     height: 82vh;
 }
 
+
 .eachMeal {
     border: 2px solid black;
     width: 250px;
@@ -127,7 +128,7 @@ svg#map {
 
 .meal-title {
     font-size: 18px;
-    color: blue;
+    color: #f6c28b;
 }
 
 .meal-image {
@@ -140,8 +141,50 @@ svg#map {
 }
 
 h2 {
-    color: red;
+    color: #A57548;
 }
+
+
+
+
+#music-container {
+    position: relative;
+    background-color: white;
+    padding: 10px;
+    margin-left: 20px; /* Ajout d'une marge à gauche */
+    margin-top: 9vh;
+    overflow-y: auto; /* Ajout d'une barre de défilement si nécessaire */
+    height: 82vh;
+}
+
+.chanson{
+    font-size: 18px;
+    color: #f6c28b;
+}
+
+.linkMusic{
+    color: #f6c28b;
+    text-decoration: none;
+    width: 100px;
+    border-radius: 18px;
+    font: bold 12px Verdana;
+}
+
+.imgMusic{
+    width: 80%;
+    max-width: 180px;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+h2 {
+    color: #A57548;
+}
+
+
+
 
 
 /* Style du footer */
@@ -160,3 +203,29 @@ footer {
     margin: 0 10px; /* Agrega un espacio horizontal entre los enlaces */
 }
 
+.modal {
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    width: 400px;
+    height: 600px;
+    overflow: scroll;
+    z-index: 1000;
+    background-color: #e0b57f;
+    display:none;
+}
+.closeModal{
+    position: absolute;
+    top: 30%;
+    right: 24.8%;
+    width: 20px;
+    height: 20px;
+    z-index: 1001;
+    display: none;
+    cursor: pointer;
+}
+.instructionParagraph{
+    line-height: 30px;
+    padding: 10px;
+    margin-top: 20px;
+}
