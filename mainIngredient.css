@@ -1,4 +1,3 @@
-html,
 body {
     height: 100%;
     display: flex;
@@ -15,6 +14,7 @@ header {
     justify-content: space-between;
     color: white;
     font-weight: 600;
+    padding-left: 10px;
 }
 
 header p{
@@ -121,6 +121,7 @@ footer {
     gap: 20px;
     color: white;
     background-color: #d09f62;
+    padding-left: 10px;
 }
 
 .footer_link {
