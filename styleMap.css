@@ -103,36 +103,40 @@ svg#map {
 
 /* pour que le div country n'occupe pas tout le espace */
 #country{
-    position: absolute; /* Ajout de position absolue */
+    position: absolute; 
     top: 0;
     visibility: hidden;
-    width: 0; /* Ajout de largeur 0 */
-    height: 0; /* Ajout de hauteur 0 */
+    width: 0; 
+    height: 0; 
+}
+
+h2 {
+    font-size: 1.2rem;
+    text-align: center;
+    color: #A57548;
 }
 
 #recipes-container {
-    position: relative;
-    background-color: white;
     padding: 10px;
-    margin-left: 20px; /* Ajout d'une marge à gauche */
-    margin-top: 9vh;
-    overflow-y: auto; /* Ajout d'une barre de défilement si nécessaire */
+    overflow-y: auto;
     height: 82vh;
 }
 
-
 .eachMeal {
-    border: 2px solid black;
-    width: 250px;
+    border: 2px solid #A57548;
+    border-radius: 10px;
+    width: 170px;
 }
 
+
 .meal-title {
-    font-size: 18px;
+    text-align: center;
+    font-size: 1rem;
     color: #f6c28b;
 }
 
 .meal-image {
-    width: 80%;
+    width: 40%;
     max-width: 180px;
     height: auto;
     border-radius: 10px;
@@ -140,13 +144,8 @@ svg#map {
     margin: 10px auto;
 }
 
-h2 {
-    color: #A57548;
-}
 
-
-
-
+/* Style de la musique */
 #music-container {
     position: relative;
     background-color: white;
