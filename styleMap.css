@@ -52,11 +52,7 @@ body {
 
 /* Container for the globe */
 .globe-wrapper {
-<<<<<<< HEAD:style2.css
-    width: 50%; /* Le globe prend la moitié de la largeur */
-=======
     margin-top: 9vh; 
->>>>>>> 8024061c5b2814b6244a2416d1f6cf6d108be33b:styleMap.css
 }
 
 /* Info overlay */
