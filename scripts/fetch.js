@@ -287,3 +287,4 @@ function updateSize() {
     renderer.setSize(side, side);
 }
 
+ 
