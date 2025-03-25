@@ -2,7 +2,7 @@ import * as THREE from "three";
 import {OrbitControls} from "three/addons/controls/OrbitControls.js"; // permett de interagir avec l'objet 3D
 import gsap from "gsap"; //bibliotheque JS creer des animations 
 import {obtenerRecetasPorArea, areas} from "./recettes.js";  // obtenir les async des recettes. il faut de ./ pour dire que cest un fichier a nous et pas dasn un bibliotheque
-// import { rechercherChansons,afficherChansons } from "./music.js";
+import { rechercherChansons,afficherChansons } from "./music.js";
 
 
 const containerEl = document.querySelector(".globe-wrapper"); //container principal du monde
@@ -63,12 +63,12 @@ containerEl.addEventListener("click", (e) => { //ecoute le'evenement du click
     if (area) {
         obtenerRecetasPorArea(area, svgCountries, hoveredCountryIdx);
     } 
-// const affichertousChansons =  document.getElementById("music-container")
-//  affichertousChansons.innerHTML = "";
-// const genreMusical = 'pop'; // ou 'rock', 'hip-hop', etc.
-// const pays = countryName; // ou 'USA', 'UK', etc.
-// const maCleApi = 'AIzaSyAx7Fx7yCkS28Kpz48rdCeRG8G68RJfC1E'; 
-//    afficherChansons(genreMusical, pays, maCleApi);
+const affichertousChansons =  document.getElementById("music-container")
+ affichertousChansons.innerHTML = "";
+const genreMusical = 'pop'; // ou 'rock', 'hip-hop', etc.
+const pays = countryName; // ou 'USA', 'UK', etc.
+const maCleApi = 'AIzaSyAx7Fx7yCkS28Kpz48rdCeRG8G68RJfC1E'; 
+   afficherChansons(genreMusical, pays, maCleApi);
 });
 
 function updateMousePosition(eX, eY) { //function qui met à jour les coordonnes de la souris

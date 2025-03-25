@@ -2,36 +2,36 @@
 
 // Correspondance entre les pays dans le SVG et les aires dans l'API
 export const areas = {
-    "United States": "American",
-    "United Kingdom": "British",
-    "Canada": "Canadian",
-    "China": "Chinese",
-    "Croatia": "Croatian",
-    "Netherlands": "Dutch",
-    "Egypt": "Egyptian",
-    "Philippines": "Filipino",
-    "France": "French",
-    "Greece": "Greek",
-    "India": "Indian",
-    "Ireland": "Irish",
-    "Italy": "Italian",
-    "Jamaica": "Jamaican",
-    "Japan": "Japanese",
-    "Kenya": "Kenyan",
-    "Malaysia": "Malaysian",
-    "Mexico": "Mexican",
-    "Morocco": "Moroccan",
-    "Poland": "Polish",
-    "Portugal": "Portuguese",
-    "Russian Federation": "Russian",
-    "Spain": "Spanish",
-    "Thailand": "Thai",
-    "Tunisia": "Tunisian",
-    "Turkey": "Turkish",
-    "Ukraine": "Ukrainian",
-    "Uruguay": "Uruguayan",
-    "Vietnam": "Vietnamese"
-};
+  "États-Unis": "American",
+  "Royaume-Uni": "British",
+  "Canada": "Canadian",
+  "Chine": "Chinese",
+  "Croatie": "Croatian",
+  "Pays-Bas": "Dutch",
+  "Égypte": "Egyptian",
+  "Philippines": "Filipino",
+  "France": "French",
+  "Grèce": "Greek",
+  "Inde": "Indian",
+  "Irlande": "Irish",
+  "Italie": "Italian",
+  "Jamaïque": "Jamaican",
+  "Japon": "Japanese",
+  "Kenya": "Kenyan",
+  "Malaisie": "Malaysian",
+  "Mexique": "Mexican",
+  "Maroc": "Moroccan",
+  "Pologne": "Polish",
+  "Portugal": "Portuguese",
+  "Russie": "Russian",
+  "Espagne": "Spanish",
+  "Thaïlande": "Thai",
+  "Tunisie": "Tunisian",
+  "Turquie": "Turkish",
+  "Ukraine": "Ukrainian",
+  "Uruguay": "Uruguayan",
+  "Vietnam": "Vietnamese"
+}
 
 
 
@@ -70,17 +70,15 @@ data.meals.forEach((meal) => {
 async function getYouTubeLink(mealId, recipeDiv) {
     const mealDetailsResponse = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
     const mealDetailsData = await mealDetailsResponse.json();
-    
-    if (mealDetailsData.meals && mealDetailsData.meals[0] && mealDetailsData.meals[0].strYoutube) {
-        const youtubeLink = mealDetailsData.meals[0].strYoutube;
+   
+        const youtubeLink = mealDetailsData.meals[0].strYoutube; //Vérifie si le premier élément du tableau meals a une propriété strYoutube 
         const youtubeLinkElement = document.createElement("a");
         youtubeLinkElement.href = youtubeLink;
         youtubeLinkElement.textContent = "Pour la recette, regardez sa vidéo";
         youtubeLinkElement.target = "_blank"; // Ouvre le lien dans un nouvel onglet
         recipeDiv.appendChild(youtubeLinkElement);
     } 
-}     
-    
+
         
        
         
