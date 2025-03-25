@@ -65,7 +65,7 @@ data.meals.forEach((meal) => {
     })
     getYouTubeLink(meal.idMeal, recipeDiv);
   });
-  console.log(divRecipes.innerHTML); // Vérifie si le HTML est bien mis à jour
+  console.log(divRecipes.innerHTML); 
 } else {
   divRecipes.innerHTML = ""
 }
@@ -81,7 +81,7 @@ async function getYouTubeLink(mealId, recipeDiv) {
         youtubeLinkElement.classList.add("youtube");
         youtubeLinkElement.href = youtubeLink;
         console.log(youtubeLinkElement)
-        youtubeLinkElement.textContent = "La recette, ici.";
+        youtubeLinkElement.textContent = "La recette en vidéo, ici.";
         youtubeLinkElement.target = "_blank";
         recipeDiv.appendChild(youtubeLinkElement);
     } 
