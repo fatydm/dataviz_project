@@ -182,26 +182,6 @@ h2 {
     color: #A57548;
 }
 
-
-
-
-
-/* Style du footer */
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    color: white;
-    background-color: #d09f62;
-}
-
-.footer_link {
-    border: none;
-    margin: 0 10px; /* Agrega un espacio horizontal entre los enlaces */
-}
-
 .modal {
     position: absolute;
     top: 30%;
@@ -227,4 +207,24 @@ footer {
     line-height: 30px;
     padding: 10px;
     margin-top: 20px;
+}
+
+
+
+
+
+/* Style du footer */
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    background-color: #d09f62;
+}
+
+.footer_link {
+    border: none;
+    margin: 0 10px; /* Agrega un espacio horizontal entre los enlaces */
 }
