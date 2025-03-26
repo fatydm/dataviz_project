@@ -69,6 +69,11 @@ containerEl.addEventListener("click", (e) => { //ecoute le'evenement du click
     const pays = countryName; // ou 'USA', 'UK', etc.
     const maCleApi = 'AIzaSyAx7Fx7yCkS28Kpz48rdCeRG8G68RJfC1E';
     afficherChansons(genreMusical, pays, maCleApi);
+    controls.autoRotate = false;
+    // Démarrer un minuteur pour relancer la rotation après 3 secondes (3000 millisecondes)
+    setTimeout(() => {
+        controls.autoRotate = true;
+    }, 2000); // 2000 ms = 2 secondes
 });
 
 function updateMousePosition(eX, eY) { //function qui met à jour les coordonnes de la souris
