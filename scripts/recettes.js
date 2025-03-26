@@ -62,7 +62,7 @@ data.meals.forEach((meal) => {
     divRecipes.appendChild(recipeDiv);
 
     const mealImage = document.querySelector('.meal-image');
-    mealImage.addEventListener("click",() => {
+    recipeDiv.addEventListener("click",() => {
       getInstructions(meal.idMeal);
     })
     getYouTubeLink(meal.idMeal, recipeDiv);

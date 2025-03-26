@@ -1,3 +1,13 @@
+header{
+    height: 5vh;
+}
+main{
+    height: 90vh;
+}
+footer{
+    height: 5vh;
+}
+
 /* Style page du site */
 * {
     margin: 0;
@@ -135,11 +145,12 @@ footer {
     align-items: center;
     color: white;
     background-color: #d09f62;
-    padding: 20px;
+    padding-left: 10px;
 }
 
 .footer_link {
     color: white;
     text-decoration: none;
     font: bold 12px Verdana;
+    padding: 15px;
 }

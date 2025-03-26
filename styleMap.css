@@ -1,3 +1,14 @@
+header{
+    height: 5vh;
+}
+main{
+    height: 90vh;
+}
+footer{
+    height: 5vh;
+}
+
+
 body {
     padding: 0;
     margin: 0;
@@ -16,7 +27,6 @@ header {
 
 nav {
     display: flex;
-    background-color: #d09f62;
     height: 55px;
     justify-content: flex-end;
     align-items: center;
@@ -205,6 +215,7 @@ footer {
     color: white;
     background-color: #d09f62;
     padding: 5px;
+
 }
 
 .footer_link {
@@ -212,4 +223,5 @@ footer {
     text-decoration: none;
     font: bold 12px Verdana;
     padding-left: 30px;
+    padding-right: 10px;
 }

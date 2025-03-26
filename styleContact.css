@@ -1,9 +1,18 @@
-html,
+header{
+    height: 5vh;
+}
+section{
+    height: 90vh;
+}
+footer{
+    height: 5vh;
+}
+
 body {
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    /* gap: 20px; */
     margin: 0;
 }
 
@@ -15,6 +24,7 @@ header {
     justify-content: space-between;
     color: white;
     font-weight: 600;
+    padding-left: 5px;
 }
 
 header p{
@@ -23,8 +33,6 @@ header p{
 
 nav {
     display: flex;
-    background-color: #d09f62;
-    height: 65px;
     justify-content: flex-end;
     align-items: center;
 }
@@ -38,22 +46,19 @@ a {
 
 }
 
-a:focus {
-    text-decoration: underline;
-}
-
 /* formulaire  */
 
 @import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
 
 .contacto {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
 }
 
 .contacto h2 {
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 40px;
     color:#d09f62;
     font-weight: bolder;
 }
@@ -65,14 +70,13 @@ a:focus {
     border-radius: 5px;
     box-shadow: 0 3px 10px;
     color:#d09f62;
-    font-weight: bolder;
 }
 
 .control-formulario label {
     line-height: 2.7em;
     font-weight: bolder;
     color:#d09f62;
-    font-size: 20px;
+    font-size: 1.3rem;
 }
 
 .control-formulario textarea {
@@ -105,7 +109,7 @@ a:focus {
 }
 
 .submit-btn:hover {
-    background-color: lavender;
+    background-color: rgb(212, 194, 143);
     border: 2px solid#d09f62;
     cursor: pointer;
     font-weight: 900;
@@ -114,12 +118,13 @@ a:focus {
 /* Style du footer */
 footer {
     display: flex;
-    flex-direction: row;
+    /* flex-direction: row; */
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    /* gap: 20px; */
     color: white;
     background-color: #d09f62;
+    padding-left: 5px;
 }
 
 .footer_link {
