@@ -45,6 +45,7 @@ const data = await respuesta.json();
 
 if (data.meals) {
 const divRecipes = document.getElementById("recipes-container");
+
 const numeroRecettes = document.createElement("h2");
 const countryName = svgCountries[hoveredCountryIdx].getAttribute("data-name");
 numeroRecettes.textContent = `${data.meals.length} recettes pour "${countryName}"`;
@@ -59,10 +60,12 @@ data.meals.forEach((meal) => {
     `;
     recipeDiv.classList.add("recipe");
     divRecipes.appendChild(recipeDiv);
-    recipeDiv.addEventListener("click",() => {
-      getInstructions(meal.idMeal, recipeDiv);
 
+    const mealImage = document.querySelector('.meal-image');
+    mealImage.addEventListener("click",() => {
+      getInstructions(meal.idMeal);
     })
+    
     getYouTubeLink(meal.idMeal, recipeDiv);
   });
   console.log(divRecipes.innerHTML); 
@@ -86,8 +89,8 @@ async function getYouTubeLink(mealId, recipeDiv) {
         recipeDiv.appendChild(youtubeLinkElement);
     } 
 
+
 const closeModal = document.querySelector('.closeModal')
-        
 async function getInstructions(mealId) {
   modal.innerText = "";  
   modal.style.display = "flex";
@@ -101,10 +104,7 @@ async function getInstructions(mealId) {
       const instructionsElement = document.createElement('p');
       instructionsElement.classList.add('instructionParagraph')
       
-
-
       instructionsElement.textContent = instructions;
-      instructionsElement.target = "_blank";
       
       modal.appendChild(instructionsElement);
 }      
