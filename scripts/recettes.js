@@ -65,7 +65,7 @@ data.meals.forEach((meal) => {
     mealImage.addEventListener("click",() => {
       getInstructions(meal.idMeal);
     })
-    
+
     getYouTubeLink(meal.idMeal, recipeDiv);
   });
   console.log(divRecipes.innerHTML); 
@@ -103,7 +103,6 @@ async function getInstructions(mealId) {
       // console.log(instructionsLink)
       const instructionsElement = document.createElement('p');
       instructionsElement.classList.add('instructionParagraph')
-      
       instructionsElement.textContent = instructions;
       
       modal.appendChild(instructionsElement);

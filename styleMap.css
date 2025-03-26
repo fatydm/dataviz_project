@@ -151,9 +151,11 @@ h2 {
     color: #A57548;
     padding: 20px;
 }
+
 /* Style de la musique */
 h2 {
-    color: #A57548;
+    font-size: 0.8rem;
+    color: #70573c;
 }
 
 #music-container {
@@ -161,26 +163,31 @@ h2 {
     background-color: white;
     padding: 10px;
     margin-left: 20px;
-    margin-top: 9vh;
+    margin-top: 6vh;
     overflow-y: auto; 
     height: 82vh;
 }
+.musicDiv{
+    border: 2px solid #A57548;
+    border-radius: 10px;
+}
 
 .chanson{
-    font-size: 18px;
-    color: #f6c28b;
+    text-align: center;
+    font-size: 0.5rem;
+    color: #70573c;
 }
 
 .linkMusic{
-    color: #f6c28b;
+    color: #A57548;
     text-decoration: none;
-    width: 100px;
     border-radius: 18px;
     font: bold 12px Verdana;
+    padding: 15%;
 }
 
 .imgMusic{
-    width: 80%;
+    width: 40%;
     max-width: 180px;
     height: auto;
     border-radius: 10px;

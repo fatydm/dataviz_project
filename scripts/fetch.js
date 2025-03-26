@@ -1,8 +1,8 @@
 import * as THREE from "three";
-import {OrbitControls} from "three/addons/controls/OrbitControls.js"; // permett de interagir avec l'objet 3D
+import { OrbitControls } from "three/addons/controls/OrbitControls.js"; // permett de interagir avec l'objet 3D
 import gsap from "gsap"; //bibliotheque JS creer des animations 
-import {obtenerRecetasPorArea, areas} from "./recettes.js";  // obtenir les async des recettes. il faut de ./ pour dire que cest un fichier a nous et pas dasn un bibliotheque
-import { rechercherChansons,afficherChansons } from "./music.js";
+import { obtenerRecetasPorArea, areas } from "./recettes.js";  // obtenir les async des recettes. il faut de ./ pour dire que cest un fichier a nous et pas dasn un bibliotheque
+import { rechercherChansons, afficherChansons } from "./music.js";
 
 
 const containerEl = document.querySelector(".globe-wrapper"); //container principal du monde
@@ -57,18 +57,18 @@ containerEl.addEventListener("click", (e) => { //ecoute le'evenement du click
     updateMousePosition(e.clientX, e.clientY);
     const countryName = svgCountries[hoveredCountryIdx].getAttribute("data-name");
     countryNameEl.innerHTML = countryName;
-    const afficherRecettes = document.getElementById ("recipes-container")
+    const afficherRecettes = document.getElementById("recipes-container")
     afficherRecettes.innerHTML = "";
     const area = areas[countryName];
     if (area) {
         obtenerRecetasPorArea(area, svgCountries, hoveredCountryIdx);
-    } 
-const affichertousChansons =  document.getElementById("music-container")
- affichertousChansons.innerHTML = "";
-const genreMusical = 'pop'; // ou 'rock', 'hip-hop', etc.
-const pays = countryName; // ou 'USA', 'UK', etc.
-const maCleApi = 'AIzaSyAx7Fx7yCkS28Kpz48rdCeRG8G68RJfC1E'; 
-   afficherChansons(genreMusical, pays, maCleApi);
+    }
+    const affichertousChansons = document.getElementById("music-container")
+    affichertousChansons.innerHTML = "";
+    const genreMusical = ''; // ou 'rock', 'hip-hop', etc.
+    const pays = countryName; // ou 'USA', 'UK', etc.
+    const maCleApi = 'AIzaSyAx7Fx7yCkS28Kpz48rdCeRG8G68RJfC1E';
+    afficherChansons(genreMusical, pays, maCleApi);
 });
 
 function updateMousePosition(eX, eY) { //function qui met à jour les coordonnes de la souris
@@ -78,7 +78,7 @@ function updateMousePosition(eX, eY) { //function qui met à jour les coordonnes
 
 
 function initScene() { //creation d'objet
-    renderer = new THREE.WebGLRenderer({canvas: canvasEl, alpha: true});
+    renderer = new THREE.WebGLRenderer({ canvas: canvasEl, alpha: true });
     //canvas est egal mon objet 3D et alpha est le fond 
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     //definit la resolution 
@@ -112,8 +112,8 @@ function createOrbitControls() {
     controls.enablePan = true;  //L'utilisateur ne pourra pas déplacer la scène horizontalement ou verticalement.
     controls.enableZoom = true; //zoom
     controls.enableDamping = true; //Active l'effet de lissage pour rendre les mouvements plus fluides.
-//     controls.minPolarAngle = .46 * Math.PI;  //ca nous permet de deplacer le monde de droite a gauche
-//     controls.maxPolarAngle = .46 * Math.PI;
+    //     controls.minPolarAngle = .46 * Math.PI;  //ca nous permet de deplacer le monde de droite a gauche
+    //     controls.maxPolarAngle = .46 * Math.PI;
     controls.autoRotate = true;  //rotation de la camera automatique 
     controls.autoRotateSpeed *= .2; //vitesse de la rotation
 
@@ -169,12 +169,12 @@ function createGlobe() { //  crée un globe 3D en utilisant Three.js
     globeStrokesMesh.renderOrder = 2; // l'ordre del objet,  plus élevé signifie que l'objet sera dessiné après les autres, le plaçant donc au-dessus.
 
     //creation du groupe pour les manipuler ensemble
-    globeGroup.add(globeStrokesMesh, globeSelectionOuterMesh, globeColorMesh); 
+    globeGroup.add(globeStrokesMesh, globeSelectionOuterMesh, globeColorMesh);
 }
 
 //charger texture depuis un URI 
 function setMapTexture(material, URI) {
-    textureLoader.load(  
+    textureLoader.load(
         URI,//chemin de notre svg, il n'a pas de lien car l'image est codifie avec un format Base64
         (t) => { //function callback et t represente la texture
             t.repeat.set(1, 1); //repetition de la texture ici une seule fois
@@ -208,7 +208,7 @@ function prepareHiResTextures() {
     svgData = new XMLSerializer().serializeToString(svgMapDomEl); //remet le SVG avec modifications
     staticMapUri = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svgData);
     setMapTexture(globeStrokesMesh.material, staticMapUri);
-    
+
     //met a jour le texte = pays actuel, recupere le nom du pays 
     countryNameEl.innerHTML = svgCountries[hoveredCountryIdx].getAttribute("data-name");
 
@@ -239,7 +239,7 @@ function prepareLowResTextures() {
 
 
 //mets a jour la carte du monde 
-function updateMap(uv = {x: 0, y: 0}) {  //position par defaut
+function updateMap(uv = { x: 0, y: 0 }) {  //position par defaut
     const pointObj = svgMapDomEl.createSVGPoint(); //cree un objet pour representer un point avec le systeme des coordonnes SVG
     pointObj.x = uv.x * svgViewBox[0];
     pointObj.y = (1 + offsetY - uv.y) * svgViewBox[1];
@@ -247,20 +247,20 @@ function updateMap(uv = {x: 0, y: 0}) {  //position par defaut
     for (let i = 0; i < svgCountries.length; i++) {
         const boundingBox = bBoxes[i];
         if ( //delimite les pays 
-                pointObj.x >= boundingBox.x &&
-                pointObj.x <= boundingBox.x + boundingBox.width &&
-                pointObj.y >= boundingBox.y &&
-                pointObj.y <= boundingBox.y + boundingBox.height
+            pointObj.x >= boundingBox.x &&
+            pointObj.x <= boundingBox.x + boundingBox.width &&
+            pointObj.y >= boundingBox.y &&
+            pointObj.y <= boundingBox.y + boundingBox.height
         ) {// verifie si le pointer est à l'interieur du pays 
             const isHovering = svgCountries[i].isPointInFill(pointObj);
             if (isHovering) {
                 if (i !== hoveredCountryIdx) {
-                        hoveredCountryIdx = i;
-                        setMapTexture(globeSelectionOuterMesh.material, dataUris[hoveredCountryIdx]);
-                        const countryName = svgCountries[hoveredCountryIdx].getAttribute("data-name");
-                        countryNameEl.innerHTML = countryName;
-                    }
-                    break;
+                    hoveredCountryIdx = i;
+                    setMapTexture(globeSelectionOuterMesh.material, dataUris[hoveredCountryIdx]);
+                    const countryName = svgCountries[hoveredCountryIdx].getAttribute("data-name");
+                    countryNameEl.innerHTML = countryName;
+                }
+                break;
             }
         }
     }
@@ -287,4 +287,3 @@ function updateSize() {
     renderer.setSize(side, side);
 }
 
- 

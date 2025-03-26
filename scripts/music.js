@@ -19,17 +19,18 @@ export async function afficherChansons(genre, pays, cleApi) {
     console.log(chansons)
     const divMusic = document.getElementById("music-container");
     const titreMusicGeneral = document.createElement("h2");
-    titreMusicGeneral.textContent = `${chansons.length} musique pour ${pays}`;
+    titreMusicGeneral.textContent = `${chansons.length} musiques pour "${pays}"`;
     divMusic.appendChild(titreMusicGeneral) 
     if (chansons.length > 0) {
         chansons.forEach((chanson) => {
-            const musciDiv = document.createElement("div");
-            musciDiv.innerHTML = `
+            const musicDiv = document.createElement("div");
+            musicDiv.classList.add("musicDiv");
+            musicDiv.innerHTML = `
         <h4 class="chanson">${chanson.titre}</h4>
         <img class="imgMusic" src="${chanson.miniature}" alt="Miniature de la vidéo">
-        <a class="linkMusic" href="${chanson.link}" target="_blank">Voir la vidéo</a>
+        <a class="linkMusic" href="${chanson.link}" target="_blank">Écoutez la ici</a>
          `;
-         divMusic.appendChild(musciDiv);
+         divMusic.appendChild(musicDiv);
         });
     } else {
         divMusic.style.display = "none"
