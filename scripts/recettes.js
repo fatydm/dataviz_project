@@ -100,8 +100,6 @@ async function getInstructions(mealId) {
       // console.log(instructionsLink)
       const instructionsElement = document.createElement('p');
       instructionsElement.classList.add('instructionParagraph')
-      
-
 
       instructionsElement.textContent = instructions;
       instructionsElement.target = "_blank";
