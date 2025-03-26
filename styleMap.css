@@ -99,7 +99,7 @@ h2 {
     gap: 20px;
     margin-left: 50px;
     height: 80vh;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .eachMeal {
@@ -141,6 +141,7 @@ h2 {
     display: none;
     cursor: pointer;
 }
+
 .instructionParagraph{
     line-height: 30px;
     padding: 10px;
@@ -154,7 +155,7 @@ h2 {
 
 /* Style de la musique */
 h2 {
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: #70573c;
 }
 
@@ -174,7 +175,7 @@ h2 {
 
 .chanson{
     text-align: center;
-    font-size: 0.5rem;
+    font-size: 0.9rem;
     color: #70573c;
 }
 
@@ -183,7 +184,8 @@ h2 {
     text-decoration: none;
     border-radius: 18px;
     font: bold 12px Verdana;
-    padding: 15%;
+    padding: 28%;
+    font-size: 0.6rem;
 }
 
 .imgMusic{

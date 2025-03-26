@@ -65,7 +65,6 @@ data.meals.forEach((meal) => {
     mealImage.addEventListener("click",() => {
       getInstructions(meal.idMeal);
     })
-
     getYouTubeLink(meal.idMeal, recipeDiv);
   });
   console.log(divRecipes.innerHTML); 
