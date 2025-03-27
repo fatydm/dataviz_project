@@ -23,7 +23,6 @@ function displayRecipePerIngredient() {
                 oldRecipesContainer.remove();
             }
     
-            // J'ai fait une condition ici pour cacher les autres images
             imagesOfFood.forEach(img => {
                 if (img !== event.target) {
                     img.style.display = 'none';

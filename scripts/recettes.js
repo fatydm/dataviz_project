@@ -1,5 +1,3 @@
-import { div } from "three/tsl";
-
 
 // Correspondance entre les pays dans le SVG et les aires dans l'API
 export const areas = {
@@ -78,7 +76,7 @@ async function getYouTubeLink(mealId, recipeDiv) {
     const mealDetailsResponse = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`);
     const mealDetailsData = await mealDetailsResponse.json();
    
-        const youtubeLink = mealDetailsData.meals[0].strYoutube; //Vérifie si le premier élément du tableau meals a une propriété strYoutube 
+        const youtubeLink = mealDetailsData.meals[0].strYoutube; 
         const youtubeLinkElement = document.createElement("a");
         youtubeLinkElement.classList.add("youtube");
         youtubeLinkElement.href = youtubeLink;

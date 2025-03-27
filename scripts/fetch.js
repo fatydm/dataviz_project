@@ -48,8 +48,6 @@ initScene(); //va creer l'objet 3D
 
 window.addEventListener("resize", updateSize); //represente la fentre du navigateur. cest responisve grace au resize 
 
-
-
 containerEl.addEventListener("mousemove", (e) => { //ecoute le mouvement de la souris
     updateMousePosition(e.clientX, e.clientY); //recupere la position de la souris X, Y
 });
