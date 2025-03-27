@@ -113,6 +113,12 @@ h3 {
     margin-top: 0;
 }
 
+.youtube{
+    font-size: 0.6rem;
+    color: #d09f62;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
 /* Style du footer */
 footer {
     display: flex;

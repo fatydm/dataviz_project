@@ -89,8 +89,8 @@ async function getYouTubeLink(mealId, recipeDiv) {
     } 
 
 
-const closeModal = document.querySelector('.closeModal')
-async function getInstructions(mealId) {
+  const closeModal = document.querySelector('.closeModal')
+  async function getInstructions(mealId) {
   modal.innerText = "";  
   modal.style.display = "flex";
   closeModal.style.display = "flex"

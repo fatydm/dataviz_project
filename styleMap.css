@@ -141,6 +141,7 @@ h2 {
     background-color: #e0b57f;
     display:none;
 }
+
 .closeModal{
     position: absolute;
     top: 30%;
@@ -158,7 +159,7 @@ h2 {
     margin-top: 20px;
 }
 
-.youtube{
+.youtube {
     color: #A57548;
     padding: 20px;
 }
