@@ -1,4 +1,4 @@
-import * as THREE from "three";
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js"; // permett de interagir avec l'objet 3D
 import gsap from "gsap"; //bibliotheque JS creer des animations 
 import { obtenerRecetasPorArea, areas } from "./recettes.js";  // obtenir les async des recettes. il faut de ./ pour dire que cest un fichier a nous et pas dasn un bibliotheque
