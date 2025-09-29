@@ -226,3 +226,15 @@ footer {
     padding-left: 30px;
     padding-right: 10px;
 }
+
+.globe-wrapper {
+    width: 100%;
+    height: 500px; /* Ajuste selon ton besoin */
+    position: relative;
+}
+
+#globe-3d {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
