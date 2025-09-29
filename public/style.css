@@ -129,7 +129,7 @@ p {
     color: transparent;
     text-transform: uppercase;
     background-image: linear-gradient(to left, #5a3825, #8b5a2b, #e3b04b, #f7d25a, #6d2b32, #4a1c26);
-    /* -webkit-background-clip: text; */
+    -webkit-background-clip: text;
 }
 
 .items {
