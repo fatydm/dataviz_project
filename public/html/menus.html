@@ -477,7 +477,7 @@
         // Globe : sphere avec texture
         const geometry = new THREE.SphereGeometry(1, 64, 64);
         const textureLoader = new THREE.TextureLoader();
-        const earthTexture = textureLoader.load('/asset/earth.jpg'); // ajoute ton image dans public/asset/
+        const earthTexture = textureLoader.load('/asset/world.svg'); // ajoute ton image dans public/asset/
         const material = new THREE.MeshStandardMaterial({ map: earthTexture });
         const globe = new THREE.Mesh(geometry, material);
         scene.add(globe);
